@@ -1,0 +1,3266 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.74.3" />
+
+
+<title>3. Basics of R - ECON0791</title>
+<meta property="og:title" content="3. Basics of R - ECON0791">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/announcement/">Announcement</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+
+    <h1 class="article-title">3. Basics of R</h1>
+
+    
+
+    <div class="article-content">
+      
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
+
+
+<div id="syllabus" class="section level1">
+<h1>Syllabus</h1>
+<ul>
+<li>Introduction
+<ul>
+<li><strong>Installing R and RStudio</strong>: R Versions, Download and install R, Installing Packages, Loading Packages, Updating R and its Packages.</li>
+<li><strong>User Interface, Packages and Help</strong>: The R Console, RStudio, Getting Help.</li>
+<li><strong>R Packages</strong>: Listing Packages in Local Libraries, Loading Packages, Package Repositories, Finding and Installing Packages Inside R and other Repositories,</li>
+</ul></li>
+<li>The R Language
+<ul>
+<li><strong>Overview</strong>: Expressions, Objects, Symbols, Functions, Special Values.</li>
+<li><strong>R Objects</strong>: Vectors, Integers, Character, Logicals, Complex and Raw, Attributes of Objects, Matrices, Arrays, Class, Dates and Time, Factors, Coercion, Lists, Data Frames, Changing values, Logical Subsetting, Boolean Operators, Missing Information and removing NAs.</li>
+<li><strong>R Environment</strong>: Symbols, Working with Environments, The Global Environment.</li>
+</ul></li>
+<li>Working with Data in R
+<ul>
+<li><strong>Loading and Saving data in R</strong>: Entering Data within R, Data Editor (RStudio), Datasets in R, Working Directory, The read Family, HTML data links, R Files, Saving R Files, Excel Spreadsheets and R, Loading files from other programs.</li>
+<li><strong>Preparing Data</strong>: Combining, Transforming, Binning, Subsetting, Cleaning, Sorting and Summarizing Data.</li>
+</ul></li>
+<li>Graphics
+<ul>
+<li><strong>Base Graphics</strong>: Scatter Plots, Time Series Plots, Bar Plots, Histogram, Box-Plots, Customizing Charts.</li>
+</ul></li>
+</ul>
+</div>
+<div id="what-is-r" class="section level1">
+<h1>What is R?</h1>
+<ul>
+<li>R is an open-source software environment for statistical computing and graphics.</li>
+<li>R compiles and runs on Windows, Mac OS X, and numerous UNIX platforms (such as Linux).</li>
+<li>R is open source software.
+Other software like STATA may cost on an average of $1000 annual license fee.</li>
+</ul>
+</div>
+<div id="the-r-environment" class="section level1">
+<h1>The R Environment</h1>
+<ul>
+<li>Features of R
+<ul>
+<li>An effective data handling and storage facility.</li>
+<li>A suite of operators for calculations on arrays, in particular matrices.</li>
+<li>A collection of tools for data analysis.</li>
+<li>Graphical facilities for data analysis.</li>
+<li>A well developed, simple, and effective programing language.</li>
+</ul></li>
+<li>The R system is a software environment for statistical computing and graphics.</li>
+<li>The term “environment” is intended to characterize R as a fully planned and coherent system, rather than an incremental accretion of very specific and inflexible tools, as is frequently the case with other data analysis software.</li>
+<li>R is an implementation of S language.</li>
+<li>S is a language that was developed by John Chambers and others at Bell Labs.</li>
+<li>S was initiated in 1976 as a statistical analysis environment.</li>
+<li>R was created in New Zealand in the year 1991 by Ross Ihaka and Robert Gentleman.</li>
+<li>The first version R 1.0.0 was released in the year 2000 after Ross and Robert agreed to make it a free software under GNU General Public License in 1995.</li>
+<li>The name “GNU” is a recursive acronym for “GNU’s Not Unix.” See <a href="https://gnu.org" class="uri">https://gnu.org</a><br />
+</li>
+<li>Usually, there is an official release of R twice a year.</li>
+<li>In S, statistical analysis is usually done as a series of steps with intermediate results being stored in objects, Thus whereas SPSS and SAS will give copious output from a regression analysis, R will give minimal output and store the results in a fit object for subsequent interrogation by further R functions.</li>
+</ul>
+</div>
+<div id="design-of-the-r-system" class="section level1">
+<h1>Design of the R system</h1>
+<ul>
+<li>R system is divided into 2 conceptual parts –
+<ul>
+<li>The “base” R system that you download from CRAN <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></li>
+<li>Everything else.</li>
+</ul></li>
+<li>The “base” package contains the most fundamental functions used to run R.</li>
+<li>The other packages can be downloaded and installed as per user requirements; for eg.<code>AER</code> package is required for econometrics.</li>
+</ul>
+</div>
+<div id="the-r-console" class="section level1">
+<h1>The R console</h1>
+<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<img src="3-Basics-of-R/RConsole.png" alt="Fig 1:The R Console" width="90%" />
+<p class="caption">
+Figure 1: Fig 1:The R Console
+</p>
+</div>
+<p>The R console is a tool that allows you to type commands into R and see how the R system responds. The commands that you type into the console are called expressions. By default, R will display a greater-than sign (“&gt;”) in the console (at the beginning of a line, when nothing else is shown) when R is waiting for you to enter a command into the console. R is prompting you to type something, so this is called a prompt. For example, suppose that you typed 17 + 3 on the console, you would see something similar to this:</p>
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="3-Basics-of-R/RConsoleExample.PNG" alt="Fig 2:Simple operations in R Console" width="90%" />
+<p class="caption">
+Figure 2: Fig 2:Simple operations in R Console
+</p>
+</div>
+</div>
+<div id="r-studio" class="section level1">
+<h1>R Studio</h1>
+<ul>
+<li>R Studio Integrated Development Environment (IDE) is a powerful and productive user interface for R.</li>
+<li>Like R, it is free and multi-platform. It can be downloaded from <a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a></li>
+<li>RStudio is a separate open-source project that brings many powerful coding tools together into an intuitive, easy-to-learn interface.</li>
+<li>The RStudio program can be run on the desktop or through a web browser.</li>
+<li>The desktop version is available for Windows, Mac OS X, and Linux platforms</li>
+</ul>
+<p><img src="3-Basics-of-R/RStudioLogo.png" width="30%" /></p>
+<div class="figure"><span id="fig:unnamed-chunk-4"></span>
+<img src="3-Basics-of-R/RStudio.png" alt="Fig 3:RStudio" width="90%" />
+<p class="caption">
+Figure 3: Fig 3:RStudio
+</p>
+</div>
+</div>
+<div id="lets-begin" class="section level1">
+<h1>Lets begin!</h1>
+<p>You can now unistall the R and RStudio already installed in your computers so that you can actually have a fresh start.
+<img src="3-Basics-of-R/uninstall.png" width="90%" /></p>
+</div>
+<div id="downloading-and-installing-r-and-rstudio" class="section level1">
+<h1>Downloading and installing R and RStudio</h1>
+<p><img src="3-Basics-of-R/downloadR1.png" width="90%" /><img src="3-Basics-of-R/downloadR2.png" width="90%" /><img src="3-Basics-of-R/downloadR3.png" width="90%" /><img src="3-Basics-of-R/downloadRStudio1.png" width="90%" /><img src="3-Basics-of-R/downloadRStudio2.png" width="90%" /><img src="3-Basics-of-R/downloadRStudio3.png" width="90%" /></p>
+</div>
+<div id="getting-help" class="section level1">
+<h1>Getting help</h1>
+<p>To get a help on a specific function say “solve”, the command is</p>
+<pre class="r"><code>help(mean)
+# or
+?mean()
+# or
+??mean</code></pre>
+<p>For a feature specified by special characters, the argument must be enclosed in double or single quotes making it a character string. This is also necessary for a few words with syntatic meaning including <code>if</code>, <code>for</code> and <code>function</code>.</p>
+<pre class="r"><code>help(&quot;[[&quot;); help(&quot;if&quot;)
+?&quot;[[&quot;</code></pre>
+</div>
+<div id="packages-in-r" class="section level1">
+<h1>Packages in R</h1>
+<p>A package is a related set of functions, help files, and data files that have been bundled together. For example, the <code>stats</code> package contains functions for doing statistical analysis. Some packages are included in R, other packages are available from public package repositories. You can also make your own packages!</p>
+<p>Inorder to get the list of packages loaded by default use the command;</p>
+<pre class="r"><code>getOption(&quot;defaultPackages&quot;)</code></pre>
+<pre><code>## [1] &quot;datasets&quot;  &quot;utils&quot;     &quot;grDevices&quot; &quot;graphics&quot;  &quot;stats&quot;     &quot;methods&quot;</code></pre>
+<pre class="r"><code># if you wish to see the list of currently loaded packages
+## (.packages())
+
+# to see all the packages available
+(.packages(all.available = TRUE))</code></pre>
+<pre><code>##   [1] &quot;abind&quot;         &quot;AER&quot;           &quot;askpass&quot;       &quot;assertthat&quot;   
+##   [5] &quot;backports&quot;     &quot;base64enc&quot;     &quot;BH&quot;            &quot;blob&quot;         
+##   [9] &quot;blogdown&quot;      &quot;bookdown&quot;      &quot;broom&quot;         &quot;callr&quot;        
+##  [13] &quot;car&quot;           &quot;carData&quot;       &quot;cellranger&quot;    &quot;cli&quot;          
+##  [17] &quot;clipr&quot;         &quot;colorspace&quot;    &quot;commonmark&quot;    &quot;conquer&quot;      
+##  [21] &quot;covr&quot;          &quot;cpp11&quot;         &quot;crayon&quot;        &quot;curl&quot;         
+##  [25] &quot;data.table&quot;    &quot;DBI&quot;           &quot;dbplyr&quot;        &quot;desc&quot;         
+##  [29] &quot;digest&quot;        &quot;dplyr&quot;         &quot;ellipsis&quot;      &quot;evaluate&quot;     
+##  [33] &quot;fansi&quot;         &quot;farver&quot;        &quot;fastmap&quot;       &quot;forcats&quot;      
+##  [37] &quot;Formula&quot;       &quot;fs&quot;            &quot;generics&quot;      &quot;ggplot2&quot;      
+##  [41] &quot;glue&quot;          &quot;gtable&quot;        &quot;haven&quot;         &quot;highr&quot;        
+##  [45] &quot;hms&quot;           &quot;htmltab&quot;       &quot;htmltools&quot;     &quot;httpuv&quot;       
+##  [49] &quot;httr&quot;          &quot;isoband&quot;       &quot;jsonlite&quot;      &quot;kableExtra&quot;   
+##  [53] &quot;knitr&quot;         &quot;labeling&quot;      &quot;later&quot;         &quot;lazyeval&quot;     
+##  [57] &quot;lifecycle&quot;     &quot;lme4&quot;          &quot;lmtest&quot;        &quot;lubridate&quot;    
+##  [61] &quot;magrittr&quot;      &quot;maptools&quot;      &quot;markdown&quot;      &quot;MatrixModels&quot; 
+##  [65] &quot;matrixStats&quot;   &quot;mgsub&quot;         &quot;mime&quot;          &quot;miniUI&quot;       
+##  [69] &quot;minqa&quot;         &quot;modelr&quot;        &quot;munsell&quot;       &quot;nloptr&quot;       
+##  [73] &quot;numDeriv&quot;      &quot;openssl&quot;       &quot;openxlsx&quot;      &quot;pbkrtest&quot;     
+##  [77] &quot;pillar&quot;        &quot;pkgbuild&quot;      &quot;pkgconfig&quot;     &quot;pkgload&quot;      
+##  [81] &quot;ppcor&quot;         &quot;praise&quot;        &quot;prettyunits&quot;   &quot;processx&quot;     
+##  [85] &quot;progress&quot;      &quot;promises&quot;      &quot;ps&quot;            &quot;purrr&quot;        
+##  [89] &quot;quantreg&quot;      &quot;R6&quot;            &quot;RColorBrewer&quot;  &quot;Rcpp&quot;         
+##  [93] &quot;RcppArmadillo&quot; &quot;RcppEigen&quot;     &quot;readr&quot;         &quot;readxl&quot;       
+##  [97] &quot;rematch&quot;       &quot;remotes&quot;       &quot;reprex&quot;        &quot;rex&quot;          
+## [101] &quot;rio&quot;           &quot;rlang&quot;         &quot;rmarkdown&quot;     &quot;rprojroot&quot;    
+## [105] &quot;rstudioapi&quot;    &quot;rvest&quot;         &quot;sandwich&quot;      &quot;scales&quot;       
+## [109] &quot;selectr&quot;       &quot;servr&quot;         &quot;shape&quot;         &quot;shiny&quot;        
+## [113] &quot;sourcetools&quot;   &quot;sp&quot;            &quot;SparseM&quot;       &quot;statmod&quot;      
+## [117] &quot;stringi&quot;       &quot;stringr&quot;       &quot;sys&quot;           &quot;testthat&quot;     
+## [121] &quot;tibble&quot;        &quot;tidyr&quot;         &quot;tidyselect&quot;    &quot;tidyverse&quot;    
+## [125] &quot;tinytex&quot;       &quot;titanic&quot;       &quot;utf8&quot;          &quot;vctrs&quot;        
+## [129] &quot;vembedr&quot;       &quot;viridisLite&quot;   &quot;webshot&quot;       &quot;whisker&quot;      
+## [133] &quot;withr&quot;         &quot;xfun&quot;          &quot;XML&quot;           &quot;xml2&quot;         
+## [137] &quot;xtable&quot;        &quot;yaml&quot;          &quot;zip&quot;           &quot;zoo&quot;          
+## [141] &quot;base&quot;          &quot;boot&quot;          &quot;class&quot;         &quot;cluster&quot;      
+## [145] &quot;codetools&quot;     &quot;compiler&quot;      &quot;datasets&quot;      &quot;foreign&quot;      
+## [149] &quot;graphics&quot;      &quot;grDevices&quot;     &quot;grid&quot;          &quot;KernSmooth&quot;   
+## [153] &quot;lattice&quot;       &quot;MASS&quot;          &quot;Matrix&quot;        &quot;methods&quot;      
+## [157] &quot;mgcv&quot;          &quot;nlme&quot;          &quot;nnet&quot;          &quot;parallel&quot;     
+## [161] &quot;rpart&quot;         &quot;spatial&quot;       &quot;splines&quot;       &quot;stats&quot;        
+## [165] &quot;stats4&quot;        &quot;survival&quot;      &quot;tcltk&quot;         &quot;tools&quot;        
+## [169] &quot;translations&quot;  &quot;utils&quot;</code></pre>
+<pre class="r"><code># or
+library()</code></pre>
+<p>To install and load a specific package use the following command. Remember that you have to load the package everytime when you are in a new R session.</p>
+<pre class="r"><code>install.packages(&quot;AER&quot;)
+library(AER)</code></pre>
+<p>Some packages can contatin data. Inorder to access data from a specific package use the following command.</p>
+<pre class="r"><code>## data(package = &quot;AER&quot;)
+data(SwissLabor, package = &quot;AER&quot;) ; head(SwissLabor)</code></pre>
+<pre><code>##   participation   income age education youngkids oldkids foreign
+## 1            no 10.78750 3.0         8         1       1      no
+## 2           yes 10.52425 4.5         8         0       1      no
+## 3            no 10.96858 4.6         9         0       0      no
+## 4            no 11.10500 3.1        11         2       0      no
+## 5            no 11.10847 4.4        12         0       2      no
+## 6           yes 11.02825 4.2        12         0       1      no</code></pre>
+<p>Finally, to remove any R package use the function;</p>
+<pre class="r"><code>remove.packages(&quot;AER&quot;)</code></pre>
+</div>
+<div id="r-commands-and-case-sensitivity" class="section level1">
+<h1>R Commands and Case Sensitivity</h1>
+<ul>
+<li>Technically R is an ‘expression language’ and is case sensitive, so <code>A</code> and <code>a</code> are different symbols and would refer to different variables.</li>
+<li>Commands are seperated either by a new-line or a semi colon (;).</li>
+<li>Comments can be put almost anywhere starting with a hashmark (#).</li>
+<li>If a command is not complete at the end of a line, R will give a different prompt, by default + on second and subsequent lines and continue to read input until the command is syntatically complete.</li>
+</ul>
+</div>
+<div id="expressions" class="section level1">
+<h1>Expressions</h1>
+<p>Examples of expressions in R include assignment statements, conditional statements and arithmetic expressions.</p>
+<pre class="r"><code>x &lt;- 1; x</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code>if (1&gt;2) &quot;yes&quot; else &quot;no&quot;</code></pre>
+<pre><code>## [1] &quot;no&quot;</code></pre>
+<p>Expressions are composed of objects and fuctions they may be seperated with new lines or semicolons.</p>
+<pre class="r"><code>&quot;hello how are you&quot; ;100+50 ; sqrt(100) </code></pre>
+<pre><code>## [1] &quot;hello how are you&quot;</code></pre>
+<pre><code>## [1] 150</code></pre>
+<pre><code>## [1] 10</code></pre>
+</div>
+<div id="objects" class="section level1">
+<h1>Objects</h1>
+<p>An object is a thing that is represented by the computer.</p>
+<ul>
+<li>The entries that R creates and manipulates are known as ‘objects’ (more on this later).</li>
+<li>During an R session objects are created and stored by name.</li>
+<li>The R command <code>objects()</code> can be used to display the names of the objects that are currently stored within R.</li>
+<li>The collection of objects currently stored is called the ‘workspace’.</li>
+<li>To remove objects the function <code>rm()</code> is available</li>
+</ul>
+<pre class="r"><code>objects(); x &lt;- c(&quot;my&quot;, 12, TRUE); x</code></pre>
+<pre><code>## [1] &quot;SwissLabor&quot; &quot;x&quot;</code></pre>
+<pre><code>## [1] &quot;my&quot;   &quot;12&quot;   &quot;TRUE&quot;</code></pre>
+<pre class="r"><code>objects()</code></pre>
+<pre><code>## [1] &quot;SwissLabor&quot; &quot;x&quot;</code></pre>
+<pre class="r"><code>rm(x); objects()</code></pre>
+<pre><code>## [1] &quot;SwissLabor&quot;</code></pre>
+<p>R has 5 basic/atomic classes of objects</p>
+<blockquote>
+<ul>
+<li>character: <code>"Hello"</code></li>
+<li>numeric(real numbers/decimal numbers): <code>c(1,2.36)</code>.</li>
+<li>integer: <code>10L</code></li>
+<li>complex :<code>2+4i</code></li>
+<li>logical: <code>TRUE/FALSE</code>.</li>
+</ul>
+</blockquote>
+<p>The most basic object is a vector. Vectors can contain objects of same class only. However, <code>list()</code> is an exception and can contain a mixture of objects.</p>
+<p><code>Inf</code> is a special number.</p>
+<pre class="r"><code>1/Inf</code></pre>
+<pre><code>## [1] 0</code></pre>
+<pre class="r"><code>Inf/Inf</code></pre>
+<pre><code>## [1] NaN</code></pre>
+<p><code>NaN</code> (Not A Number) is a value that represents an undefined value <code>NaN</code> may represent missing values as well.</p>
+<p>Objects in R have attributes like <code>names()</code>, <code>dimnames()</code> (for a matrix, array or data frame), <code>class()</code>, <code>length()</code>.</p>
+<pre class="r"><code>class(10L)</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre class="r"><code>class(&quot;Hello!&quot;)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>length(12)</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code>names(12)</code></pre>
+<pre><code>## NULL</code></pre>
+<pre class="r"><code>roll &lt;- c(170, 150, 200)
+names(roll) &lt;- &quot;Amit&quot;; names(roll)</code></pre>
+<pre><code>## [1] &quot;Amit&quot; NA     NA</code></pre>
+<pre class="r"><code>names(roll) &lt;- c(&quot;Amit&quot;, &quot;Sourav&quot;, &quot;Sneha&quot;); names(roll)</code></pre>
+<pre><code>## [1] &quot;Amit&quot;   &quot;Sourav&quot; &quot;Sneha&quot;</code></pre>
+<p>The things that we are typing/ we type in R are called expressions. <code>&lt;-</code> is called the assignment operator that assigns a value to a symbol.</p>
+<pre class="r"><code>num &lt;- 1200
+char &lt;- &quot;Hello!&quot;
+comp &lt;- 2+4i</code></pre>
+<p>You can name an object in R almost anything you want, but there are a few rules.</p>
+<ol style="list-style-type: decimal">
+<li>First, a name cannot start with a number.</li>
+<li>Second, a name cannot use some special symbols,like <code>^</code>, <code>!</code>, <code>$</code>, <code>@</code>, <code>+</code>, <code>-</code>, <code>/</code>, or <code>*</code>.</li>
+</ol>
+<p>Assignment can also be made using the function</p>
+<pre class="r"><code>assign(&quot;num&quot;, 1200 )
+num</code></pre>
+<pre><code>## [1] 1200</code></pre>
+<pre class="r"><code>assign(&quot;nos&quot;, c(1, 1.2, 300, 45)); class(nos)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>nos</code></pre>
+<pre><code>## [1]   1.0   1.2 300.0  45.0</code></pre>
+</div>
+<div id="sorting" class="section level1">
+<h1>Sorting</h1>
+<p><code>sort(x)</code> returns a vector of same size as x with the elements arranged in increasing order.</p>
+<pre class="r"><code>d &lt;- c(10,50,12,63,74,1,89,5,3,6,4)
+sort(d)</code></pre>
+<pre><code>##  [1]  1  3  4  5  6 10 12 50 63 74 89</code></pre>
+<pre class="r"><code>e &lt;- c(&quot;anish&quot;, &quot;zebra&quot;, &quot;p&quot;, &quot;e&quot;)
+sort(e)</code></pre>
+<pre><code>## [1] &quot;anish&quot; &quot;e&quot;     &quot;p&quot;     &quot;zebra&quot;</code></pre>
+<p>To sort in descending order use the argument <code>decreasing = TRUE</code>.</p>
+<pre class="r"><code>sort(d, decreasing  = TRUE)</code></pre>
+<pre><code>##  [1] 89 74 63 50 12 10  6  5  4  3  1</code></pre>
+</div>
+<div id="generating-regular-sequences" class="section level1">
+<h1>Generating regular sequences</h1>
+<pre class="r"><code>x &lt;- 1:30; x </code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+## [26] 26 27 28 29 30</code></pre>
+<pre class="r"><code>x &lt;- 30:1; x</code></pre>
+<pre><code>##  [1] 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6
+## [26]  5  4  3  2  1</code></pre>
+<pre class="r"><code>x &lt;- c(1,2,3,4,5,6,7,8,9); x</code></pre>
+<pre><code>## [1] 1 2 3 4 5 6 7 8 9</code></pre>
+<pre class="r"><code>x &lt;- seq(1,30); x</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+## [26] 26 27 28 29 30</code></pre>
+<pre class="r"><code>x &lt;- seq(-5, 5, by = 0.2); x</code></pre>
+<pre><code>##  [1] -5.0 -4.8 -4.6 -4.4 -4.2 -4.0 -3.8 -3.6 -3.4 -3.2 -3.0 -2.8 -2.6 -2.4 -2.2
+## [16] -2.0 -1.8 -1.6 -1.4 -1.2 -1.0 -0.8 -0.6 -0.4 -0.2  0.0  0.2  0.4  0.6  0.8
+## [31]  1.0  1.2  1.4  1.6  1.8  2.0  2.2  2.4  2.6  2.8  3.0  3.2  3.4  3.6  3.8
+## [46]  4.0  4.2  4.4  4.6  4.8  5.0</code></pre>
+<pre class="r"><code>x &lt;- seq(10, 2, length.out = 5); x</code></pre>
+<pre><code>## [1] 10  8  6  4  2</code></pre>
+<pre class="r"><code>x &lt;- seq(length = 51, from = -5, by = 0.2); x</code></pre>
+<pre><code>##  [1] -5.0 -4.8 -4.6 -4.4 -4.2 -4.0 -3.8 -3.6 -3.4 -3.2 -3.0 -2.8 -2.6 -2.4 -2.2
+## [16] -2.0 -1.8 -1.6 -1.4 -1.2 -1.0 -0.8 -0.6 -0.4 -0.2  0.0  0.2  0.4  0.6  0.8
+## [31]  1.0  1.2  1.4  1.6  1.8  2.0  2.2  2.4  2.6  2.8  3.0  3.2  3.4  3.6  3.8
+## [46]  4.0  4.2  4.4  4.6  4.8  5.0</code></pre>
+<p>A related function is rep() which can be used for replicating objects in various ways.</p>
+<pre class="r"><code>x &lt;- c(&quot;hi&quot;,&quot;hello&quot;); x</code></pre>
+<pre><code>## [1] &quot;hi&quot;    &quot;hello&quot;</code></pre>
+<pre class="r"><code>y &lt;- rep(x, times = 2); y</code></pre>
+<pre><code>## [1] &quot;hi&quot;    &quot;hello&quot; &quot;hi&quot;    &quot;hello&quot;</code></pre>
+<pre class="r"><code>y &lt;- rep(3, times = 10);y</code></pre>
+<pre><code>##  [1] 3 3 3 3 3 3 3 3 3 3</code></pre>
+<p>The paste() function takes an arbitrary number of arguments and concatenates one by one into character strings. Any numbers given among the arguments are coerced into character strings.</p>
+<pre class="r"><code>x &lt;- paste(&quot;a&quot;, 1:10, sep = &quot;&quot;)
+x</code></pre>
+<pre><code>##  [1] &quot;a1&quot;  &quot;a2&quot;  &quot;a3&quot;  &quot;a4&quot;  &quot;a5&quot;  &quot;a6&quot;  &quot;a7&quot;  &quot;a8&quot;  &quot;a9&quot;  &quot;a10&quot;</code></pre>
+<p>To collapse the output into a single string pass the <code>collapse</code> argument.</p>
+<pre class="r"><code>labs &lt;- paste(c(&quot;x&quot;, &quot;y&quot;), 1:10, sep = &quot;&quot;)
+labs</code></pre>
+<pre><code>##  [1] &quot;x1&quot;  &quot;y2&quot;  &quot;x3&quot;  &quot;y4&quot;  &quot;x5&quot;  &quot;y6&quot;  &quot;x7&quot;  &quot;y8&quot;  &quot;x9&quot;  &quot;y10&quot;</code></pre>
+<pre class="r"><code>labs1 &lt;- paste(c(&quot;x&quot;, &quot;y&quot;), 1:10, sep = &quot;&quot;, collapse = &quot;-&quot;)
+labs1</code></pre>
+<pre><code>## [1] &quot;x1-y2-x3-y4-x5-y6-x7-y8-x9-y10&quot;</code></pre>
+</div>
+<div id="working-directory" class="section level1">
+<h1>Working directory</h1>
+<p>To check the location of your workig derectory, use <code>getwd()</code>and to set a specific folder as your working directory use <code>setwd("file path")</code>.</p>
+</div>
+<div id="the-pass-by-value-and-pass-by-reference-in-r" class="section level1">
+<h1>The “pass-by-value” and “pass-by-reference” in R</h1>
+<p>By defalut R uses “pass-by-value” paradigm. Consider the following example;</p>
+<pre class="r"><code>x &lt;- 1:10
+x*2</code></pre>
+<pre><code>##  [1]  2  4  6  8 10 12 14 16 18 20</code></pre>
+<pre class="r"><code>x</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<pre class="r"><code># or consider
+y &lt;- x
+x*3</code></pre>
+<pre><code>##  [1]  3  6  9 12 15 18 21 24 27 30</code></pre>
+<pre class="r"><code>y</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<blockquote>
+<p>If you want to use the pass-by-reference paradigm, have a look at the <code>R.oo</code>, <code>mutatr</code> and <code>proto</code> packages..</p>
+</blockquote>
+</div>
+<div id="coercion" class="section level1">
+<h1>Coercion</h1>
+<ol style="list-style-type: decimal">
+<li>Implicit Coercion</li>
+<li>Explicit Coercion</li>
+</ol>
+<p>Implicit Coercion occurs when we try to combine objects of two or more different classes. The ordering is roughly <strong>LINCL</strong> i.e <code>logical &lt; integer &lt; numeric &lt; complex &lt; character&lt;list</code>.</p>
+<pre class="r"><code>x &lt;- c(1.7, &quot;a&quot;); class(x)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>y &lt;- c(TRUE, 2);class(y)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>z &lt;- c(&quot;a&quot;, TRUE);class(z)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>We can explicitly coerce objects by using <code>as.*()</code> functions.</p>
+<pre class="r"><code>x &lt;- c(0,1,2,3,4,5,6)
+class(x)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>as.character(x)</code></pre>
+<pre><code>## [1] &quot;0&quot; &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot; &quot;6&quot;</code></pre>
+<pre class="r"><code>as.complex(x)</code></pre>
+<pre><code>## [1] 0+0i 1+0i 2+0i 3+0i 4+0i 5+0i 6+0i</code></pre>
+<pre class="r"><code>as.logical(x)</code></pre>
+<pre><code>## [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<p>Nonsensical coercion result in NAs. NA stands for Not Available.</p>
+<pre class="r"><code>x &lt;- c(&quot;my&quot;, &quot;name &quot;, &quot;is&quot;, &quot;khan!&quot;)
+as.numeric(x)</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre><code>## [1] NA NA NA NA</code></pre>
+<pre class="r"><code>as.complex(x)</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre><code>## [1] NA NA NA NA</code></pre>
+<pre class="r"><code>as.logical(x)</code></pre>
+<pre><code>## [1] NA NA NA NA</code></pre>
+</div>
+<div id="operations-on-matrices" class="section level1">
+<h1>Operations on Matrices</h1>
+<p>Matrices are vectors with <code>dimension()</code> attribute.</p>
+<pre class="r"><code>m &lt;- matrix(1:10, nrow = 2, ncol = 5)
+m</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    7    9
+## [2,]    2    4    6    8   10</code></pre>
+<pre class="r"><code>dim(m)</code></pre>
+<pre><code>## [1] 2 5</code></pre>
+<pre class="r"><code>length(m)</code></pre>
+<pre><code>## [1] 10</code></pre>
+<pre class="r"><code>class(m)</code></pre>
+<pre><code>## [1] &quot;matrix&quot; &quot;array&quot;</code></pre>
+<p>Filling direction of a matrix</p>
+<pre class="r"><code>m &lt;- matrix(1:10, nrow = 2, ncol = 5); m</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    7    9
+## [2,]    2    4    6    8   10</code></pre>
+<pre class="r"><code>m &lt;- matrix(1:10, nrow = 2, ncol = 5, byrow = TRUE);m</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    2    3    4    5
+## [2,]    6    7    8    9   10</code></pre>
+<div id="row-and-column-binding" class="section level4">
+<h4>Row and column binding</h4>
+<p>This applies to multiple vectors of equal length column-binding and row-biding to create matrices.</p>
+<pre class="r"><code>x &lt;- 1:5
+y &lt;- 6:10
+cbind(x,y)</code></pre>
+<pre><code>##      x  y
+## [1,] 1  6
+## [2,] 2  7
+## [3,] 3  8
+## [4,] 4  9
+## [5,] 5 10</code></pre>
+<pre class="r"><code>rbind(x,y)</code></pre>
+<pre><code>##   [,1] [,2] [,3] [,4] [,5]
+## x    1    2    3    4    5
+## y    6    7    8    9   10</code></pre>
+<pre class="r"><code># or
+cbind(1:5, 6:10)</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    1    6
+## [2,]    2    7
+## [3,]    3    8
+## [4,]    4    9
+## [5,]    5   10</code></pre>
+</div>
+<div id="subsetting" class="section level4">
+<h4>Subsetting</h4>
+<p>Subsetting a matrix with <code>[</code> will subset objects of the same class</p>
+<pre class="r"><code>x &lt;- matrix(1:10, 2, 5); x</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    7    9
+## [2,]    2    4    6    8   10</code></pre>
+<pre class="r"><code>x[1,2]</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>x[2,5]</code></pre>
+<pre><code>## [1] 10</code></pre>
+<pre class="r"><code>x[,2]</code></pre>
+<pre><code>## [1] 3 4</code></pre>
+<pre class="r"><code>x[2,]</code></pre>
+<pre><code>## [1]  2  4  6  8 10</code></pre>
+<pre class="r"><code>x[,1:3] # subset the first 3 columns of the matrix</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6</code></pre>
+<pre class="r"><code>x[,c(2,4)] # subset the second and fourth columns</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    3    7
+## [2,]    4    8</code></pre>
+<pre class="r"><code>x[1,c(2,4)] # subset the 1st row and second + fourth columns</code></pre>
+<pre><code>## [1] 3 7</code></pre>
+<pre class="r"><code>diag(x) # this works only for a square matrix</code></pre>
+<pre><code>## [1] 1 4</code></pre>
+<p>When we subset a matrix it is seen that the output is a vector and not in a matrix form. This can be corrected by setting <code>drop = FALSE</code> argument.</p>
+<pre class="r"><code>x &lt;- matrix(1:10, 2, 5); x</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    7    9
+## [2,]    2    4    6    8   10</code></pre>
+<pre class="r"><code>colnames(x) &lt;- c(&quot;Kolkata&quot;, &quot;Delhi&quot;, &quot;Mumbai&quot;, &quot;Chennai&quot;, &quot;Bangalore&quot;)
+row.names(x) &lt;- c(&quot;temp&quot;, &quot;rain&quot;)
+x</code></pre>
+<pre><code>##      Kolkata Delhi Mumbai Chennai Bangalore
+## temp       1     3      5       7         9
+## rain       2     4      6       8        10</code></pre>
+<p>What is the temperature for Delhi?</p>
+<pre class="r"><code>x[1,3]</code></pre>
+<pre><code>## [1] 5</code></pre>
+<p>Now let’s see the temperature values in all the cities.</p>
+<pre class="r"><code>x[1,]</code></pre>
+<pre><code>##   Kolkata     Delhi    Mumbai   Chennai Bangalore 
+##         1         3         5         7         9</code></pre>
+<p>How does the output look different with the <code>drop</code> argument?</p>
+<pre class="r"><code>x[1,3, drop = FALSE]</code></pre>
+<pre><code>##      Mumbai
+## temp      5</code></pre>
+<pre class="r"><code>x[1,, drop = FALSE]</code></pre>
+<pre><code>##      Kolkata Delhi Mumbai Chennai Bangalore
+## temp       1     3      5       7         9</code></pre>
+</div>
+<div id="omitting-and-overwriting" class="section level4">
+<h4>Omitting and Overwriting</h4>
+<pre class="r"><code>x &lt;- matrix(c(0.3,4.5,55.3,91,0.1,105.5,-4.2,8.2,27.9),nrow=3,ncol=3); x</code></pre>
+<pre><code>##      [,1]  [,2] [,3]
+## [1,]  0.3  91.0 -4.2
+## [2,]  4.5   0.1  8.2
+## [3,] 55.3 105.5 27.9</code></pre>
+<pre class="r"><code>x[,-2]</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]  0.3 -4.2
+## [2,]  4.5  8.2
+## [3,] 55.3 27.9</code></pre>
+<pre class="r"><code>x[-1,3:2] # notice the change in the positions too</code></pre>
+<pre><code>##      [,1]  [,2]
+## [1,]  8.2   0.1
+## [2,] 27.9 105.5</code></pre>
+<pre class="r"><code>x[-1,-2] # without first row and second column</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]  4.5  8.2
+## [2,] 55.3 27.9</code></pre>
+<pre class="r"><code>x[2,] &lt;- 1:3
+x[c(1,3),2] &lt;- 900 # overwrites the second and the third row of the second column
+x[c(1,3), c(1,3)] &lt;- c(-7,7)</code></pre>
+<p>Replacing diagonals</p>
+<pre class="r"><code>diag(x) &lt;- c(1,2,3)</code></pre>
+</div>
+<div id="matrix-transpose" class="section level4">
+<h4>Matrix transpose</h4>
+<pre class="r"><code>t(x)</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    1    7
+## [2,]  900    2  900
+## [3,]   -7    3    3</code></pre>
+</div>
+<div id="creating-identity-matrix" class="section level4">
+<h4>Creating identity matrix</h4>
+<pre class="r"><code>i &lt;- diag(3); i</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    0    0
+## [2,]    0    1    0
+## [3,]    0    0    1</code></pre>
+</div>
+<div id="scalar-multiple-of-a-matrix" class="section level4">
+<h4>Scalar multiple of a matrix</h4>
+<pre class="r"><code>a &lt;- 2; a; x</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1  900   -7
+## [2,]    1    2    3
+## [3,]    7  900    3</code></pre>
+<pre class="r"><code>b &lt;- a*x; b</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    2 1800  -14
+## [2,]    2    4    6
+## [3,]   14 1800    6</code></pre>
+<pre class="r"><code>a+b; a-b # Matrix addition and substraction</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    4 1802  -12
+## [2,]    4    6    8
+## [3,]   16 1802    8</code></pre>
+<pre><code>##      [,1]  [,2] [,3]
+## [1,]    0 -1798   16
+## [2,]    0    -2   -4
+## [3,]  -12 -1798   -4</code></pre>
+</div>
+<div id="matrix-multiplication" class="section level4">
+<h4>Matrix multiplication</h4>
+<blockquote>
+<p>Note that matrix multiplication is not elementwise calculation, so the standard <code>*</code> cannot be used.</p>
+</blockquote>
+<pre class="r"><code>dim(x); dim(b)</code></pre>
+<pre><code>## [1] 3 3</code></pre>
+<pre><code>## [1] 3 3</code></pre>
+<pre class="r"><code>x%*%b</code></pre>
+<pre><code>##      [,1]  [,2] [,3]
+## [1,] 1704 -7200 5344
+## [2,]   48  7208   16
+## [3,] 1856 21600 5320</code></pre>
+</div>
+<div id="inverse-of-a-matrix" class="section level4">
+<h4>Inverse of a matrix</h4>
+<pre class="r"><code>A &lt;- matrix(data=c(3,4,1,2),nrow=2,ncol=2);A </code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    3    1
+## [2,]    4    2</code></pre>
+<pre class="r"><code>solve(A)</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    1 -0.5
+## [2,]   -2  1.5</code></pre>
+<p>An alternative way of creating a matrix using <code>dim()</code>.</p>
+<pre class="r"><code>m &lt;- 1:10; m</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<pre class="r"><code>dim(m) &lt;- c(2,5)
+m</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    7    9
+## [2,]    2    4    6    8   10</code></pre>
+<p>The functions <code>rowSums()</code> and <code>colSums()</code> calculate the total for each row and column of a matrix.</p>
+<pre class="r"><code>a &lt;- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
+b &lt;- matrix(a, nrow = 3, byrow = TRUE,
+              dimnames = list(c(&quot;1&quot;,&quot;2&quot;, &quot;3&quot;), c(&quot;x&quot;, &quot;y&quot;)))
+b</code></pre>
+<pre><code>##         x     y
+## 1 460.998 314.4
+## 2 290.475 247.9
+## 3 309.306 165.8</code></pre>
+<pre class="r"><code>totalRow &lt;- rowSums(b); totalRow</code></pre>
+<pre><code>##       1       2       3 
+## 775.398 538.375 475.106</code></pre>
+<pre class="r"><code>totalCol &lt;- colSums(b); totalCol</code></pre>
+<pre><code>##        x        y 
+## 1060.779  728.100</code></pre>
+</div>
+</div>
+<div id="working-with-date-and-time" class="section level1">
+<h1>Working with date and time</h1>
+<p>The <code>date()</code> function returns a character string of current date and time.</p>
+<pre class="r"><code>date()</code></pre>
+<pre><code>## [1] &quot;Thu Jan 07 19:07:13 2021&quot;</code></pre>
+<pre class="r"><code>class(date())</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>The <code>Sys.Date()</code> rerturns the current day in the current time zone.</p>
+<pre class="r"><code>Sys.Date()</code></pre>
+<pre><code>## [1] &quot;2021-01-07&quot;</code></pre>
+<pre class="r"><code>class(Sys.Date())</code></pre>
+<pre><code>## [1] &quot;Date&quot;</code></pre>
+<p><code>Sys.time()</code> returns returns the absolute date-time value.</p>
+<pre class="r"><code>Sys.time()</code></pre>
+<pre><code>## [1] &quot;2021-01-07 19:07:13 IST&quot;</code></pre>
+<div id="formatting-dates" class="section level3">
+<h3>Formatting dates</h3>
+<p>The follwoing codes are required while formating dates.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Output that you get</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>%d</td>
+<td>day as number (0-31)</td>
+</tr>
+<tr class="even">
+<td>%a</td>
+<td>abbreviated weekday</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>Unabbreviated weekday</td>
+</tr>
+<tr class="even">
+<td>m</td>
+<td>months (00-12)</td>
+</tr>
+<tr class="odd">
+<td>b</td>
+<td>abbreviated month</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>unabbreviated month</td>
+</tr>
+<tr class="odd">
+<td>y</td>
+<td>two digit year</td>
+</tr>
+<tr class="even">
+<td>Y</td>
+<td>Four digit year</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>d &lt;- Sys.Date()
+d</code></pre>
+<pre><code>## [1] &quot;2021-01-07&quot;</code></pre>
+<pre class="r"><code>format(d, &quot;%d %B %Y&quot;)</code></pre>
+<pre><code>## [1] &quot;07 January 2021&quot;</code></pre>
+<pre class="r"><code>d1 &lt;- format(d, &quot;%d-%B-%Y&quot;)
+d1; class(d1)</code></pre>
+<pre><code>## [1] &quot;07-January-2021&quot;</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+</div>
+<div id="creating-dates" class="section level3">
+<h3>Creating dates</h3>
+<pre class="r"><code>x &lt;- c(&quot;1jan2016&quot;, &quot;1feb2017&quot;, &quot;1mar2018&quot;); x</code></pre>
+<pre><code>## [1] &quot;1jan2016&quot; &quot;1feb2017&quot; &quot;1mar2018&quot;</code></pre>
+<pre class="r"><code>k &lt;- as.Date(x, &quot;%d %b %Y&quot;);k; class(k)</code></pre>
+<pre><code>## [1] &quot;2016-01-01&quot; &quot;2017-02-01&quot; &quot;2018-03-01&quot;</code></pre>
+<pre><code>## [1] &quot;Date&quot;</code></pre>
+<pre class="r"><code>d2 &lt;- Sys.time()
+d2</code></pre>
+<pre><code>## [1] &quot;2021-01-07 19:07:14 IST&quot;</code></pre>
+<pre class="r"><code>format(d2, &quot;%d-%B-%Y %H:%M:%S %Y&quot;)</code></pre>
+<pre><code>## [1] &quot;07-January-2021 19:07:14 2021&quot;</code></pre>
+<p>There are basically two major data types related to time</p>
+<ol style="list-style-type: decimal">
+<li><strong>POSIXct:</strong> <strong>(Portable Operating System Interface)</strong> <em>ct</em> stands for calander time. It is the number of seconds since 1-Jan-1970. Negative numbers represent the number of seconds before this time.</li>
+<li><strong>POSIXlt:</strong> <em>lt</em> stands for local time and is a named list of vectors representing seconds, minutes, hour, day, month, year and time zones.</li>
+</ol>
+<pre class="r"><code># current time as POSIXct
+unclass(Sys.time()) # What does unclass do?</code></pre>
+<pre><code>## [1] 1610026634</code></pre>
+<pre class="r"><code># as POSIXlt
+unclass(as.POSIXlt(Sys.time()))</code></pre>
+<pre><code>## $sec
+## [1] 14.07006
+## 
+## $min
+## [1] 7
+## 
+## $hour
+## [1] 19
+## 
+## $mday
+## [1] 7
+## 
+## $mon
+## [1] 0
+## 
+## $year
+## [1] 121
+## 
+## $wday
+## [1] 4
+## 
+## $yday
+## [1] 6
+## 
+## $isdst
+## [1] 0
+## 
+## $zone
+## [1] &quot;IST&quot;
+## 
+## $gmtoff
+## [1] 19800
+## 
+## attr(,&quot;tzone&quot;)
+## [1] &quot;&quot;      &quot;IST&quot;   &quot;+0630&quot;</code></pre>
+<p>Working with dates and time with <code>lubridate()</code>.</p>
+<pre class="r"><code>## install.packages(&quot;lubridate&quot;)
+library(lubridate)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;lubridate&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     date, intersect, setdiff, union</code></pre>
+<pre class="r"><code>y &lt;- ymd(&quot;2018-08-07&quot;);y; class(y)</code></pre>
+<pre><code>## [1] &quot;2018-08-07&quot;</code></pre>
+<pre><code>## [1] &quot;Date&quot;</code></pre>
+<pre class="r"><code>dmy(180807)</code></pre>
+<pre><code>## [1] &quot;2007-08-18&quot;</code></pre>
+<pre class="r"><code>ydm(180807)</code></pre>
+<pre><code>## [1] &quot;2018-07-08&quot;</code></pre>
+<p>You can also add the hour, minute and second information.</p>
+<pre class="r"><code>dmy_hms(&quot;08-09-2019 08:30:00&quot;)</code></pre>
+<pre><code>## [1] &quot;2019-09-08 08:30:00 UTC&quot;</code></pre>
+</div>
+<div id="time-zones." class="section level3">
+<h3>Time zones.</h3>
+<p>For example, you have a scheduled admission interview over Skype in a University in London on 25 Sept 2019 at 09:45 am, what time shall it be for you in Kolkata?</p>
+<pre class="r"><code>Sys.timezone() # System time zone</code></pre>
+<pre><code>## [1] &quot;Asia/Calcutta&quot;</code></pre>
+<pre class="r"><code>head(OlsonNames(), 20) # Time zone directory</code></pre>
+<pre><code>##  [1] &quot;Africa/Abidjan&quot;       &quot;Africa/Accra&quot;         &quot;Africa/Addis_Ababa&quot;  
+##  [4] &quot;Africa/Algiers&quot;       &quot;Africa/Asmara&quot;        &quot;Africa/Asmera&quot;       
+##  [7] &quot;Africa/Bamako&quot;        &quot;Africa/Bangui&quot;        &quot;Africa/Banjul&quot;       
+## [10] &quot;Africa/Bissau&quot;        &quot;Africa/Blantyre&quot;      &quot;Africa/Brazzaville&quot;  
+## [13] &quot;Africa/Bujumbura&quot;     &quot;Africa/Cairo&quot;         &quot;Africa/Casablanca&quot;   
+## [16] &quot;Africa/Ceuta&quot;         &quot;Africa/Conakry&quot;       &quot;Africa/Dakar&quot;        
+## [19] &quot;Africa/Dar_es_Salaam&quot; &quot;Africa/Djibouti&quot;</code></pre>
+<pre class="r"><code>interviewLondon &lt;- dmy_hms(&quot;25-Sep-2019 09:45:00&quot;, tz = &quot;Europe/London&quot;)
+interviewLondon</code></pre>
+<pre><code>## [1] &quot;2019-09-25 09:45:00 BST&quot;</code></pre>
+<pre class="r"><code>interviewKolkata &lt;- with_tz(interviewLondon,tz = &quot;Asia/Calcutta&quot;)
+interviewKolkata</code></pre>
+<pre><code>## [1] &quot;2019-09-25 14:15:00 IST&quot;</code></pre>
+<blockquote>
+<p>So your interview timings are; (a) 2019-09-25 09:45:00 if you are in London, and (b) 2019-09-25 14:15:00 if you are in Kolkata.</p>
+</blockquote>
+</div>
+</div>
+<div id="logical-operators" class="section level1">
+<h1>Logical Operators</h1>
+<table class="table table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Operator
+</th>
+<th style="text-align:left;">
+Interpretation
+</th>
+<th style="text-align:left;">
+Results
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;vertical-align: middle !important;" rowspan="4">
+&amp;
+</td>
+<td style="text-align:left;vertical-align: middle !important;" rowspan="4">
+AND (element-wise)
+</td>
+<td style="text-align:left;">
+TRUE &amp; TRUE = TRUE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TRUE &amp; FALSE = FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FALSE &amp; TRUE = FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FALSE &amp; FALSE = FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&amp;&amp;
+</td>
+<td style="text-align:left;">
+AND (single comparison)
+</td>
+<td style="text-align:left;">
+same as above
+</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align: middle !important;" rowspan="4">
+|
+</td>
+<td style="text-align:left;vertical-align: middle !important;" rowspan="4">
+OR (element-wise)
+</td>
+<td style="text-align:left;">
+TRUE | TRUE = TRUE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TRUE | FALSE is TRUE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FALSE | TRUE is TRUE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FALSE | FALSE is FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+||
+</td>
+<td style="text-align:left;">
+OR (single comparison)
+</td>
+<td style="text-align:left;">
+same as above
+</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align: middle !important;" rowspan="2">
+!
+</td>
+<td style="text-align:left;vertical-align: middle !important;" rowspan="2">
+NOT
+</td>
+<td style="text-align:left;">
+!TRUE = FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+!FALSE = TRUE
+</td>
+</tr>
+</tbody>
+</table>
+<p>Some examples</p>
+<pre class="r"><code>a &lt;- c(T,F,T,F); a</code></pre>
+<pre><code>## [1]  TRUE FALSE  TRUE FALSE</code></pre>
+<pre class="r"><code>b &lt;- c(F,T,T,T); b</code></pre>
+<pre><code>## [1] FALSE  TRUE  TRUE  TRUE</code></pre>
+<pre class="r"><code>a&amp;b; a&amp;&amp;b</code></pre>
+<pre><code>## [1] FALSE FALSE  TRUE FALSE</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>a|b; a||b</code></pre>
+<pre><code>## [1] TRUE TRUE TRUE TRUE</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<div id="logical-subsetting-and-extraction" class="section level3">
+<h3>Logical subsetting and extraction</h3>
+<pre class="r"><code>myvec &lt;- c(5,-2.3,4,4,4,6,8,10,40221,-8)
+myvec[c(F,T,F,F,F,F,F,F,F,T)] # extracts the negative numbers in the vector</code></pre>
+<pre><code>## [1] -2.3 -8.0</code></pre>
+<pre class="r"><code>myvec&lt;0</code></pre>
+<pre><code>##  [1] FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE</code></pre>
+<pre class="r"><code>myvec[myvec &lt; 0] # same operation as above</code></pre>
+<pre><code>## [1] -2.3 -8.0</code></pre>
+<p>To extract every second elment from the vector starting with the first</p>
+<pre class="r"><code>myvec[c(T,F)] # the flag vector c(T,F) is recycled if it&#39;s too short.</code></pre>
+<pre><code>## [1]     5     4     4     8 40221</code></pre>
+<p>Relational and logical operators together</p>
+<pre class="r"><code>myvec[(myvec&gt;0) &amp; (myvec &lt; 1000)]</code></pre>
+<pre><code>## [1]  5  4  4  4  6  8 10</code></pre>
+<p>Identifying the index positions of a vector</p>
+<pre class="r"><code>which(myvec &lt; 0)</code></pre>
+<pre><code>## [1]  2 10</code></pre>
+<p>Let’s apply logical subsetting and extraction in matrices as an example. In the following example we shall</p>
+<ol style="list-style-type: lower-alpha">
+<li>Extract elements from a row or column.</li>
+<li>Change the elements in the matrix.</li>
+</ol>
+<pre class="r"><code>A &lt;- matrix(c(0.3,4.5,55.3,91,0.1,105.5,-4.2,8.2,27.9),nrow=3,ncol=3); A</code></pre>
+<pre><code>##      [,1]  [,2] [,3]
+## [1,]  0.3  91.0 -4.2
+## [2,]  4.5   0.1  8.2
+## [3,] 55.3 105.5 27.9</code></pre>
+<pre class="r"><code>A[c(T,F,F),c(F,T,T)] #extracts the second and the third elements of first row. c(T, F,F) selects the first row, c(F,T,T) selects the elements from the selected first row.</code></pre>
+<pre><code>## [1] 91.0 -4.2</code></pre>
+<pre class="r"><code>A[c(F,T,F),c(F,T,T)] #extracts the second and the third elements of second row.</code></pre>
+<pre><code>## [1] 0.1 8.2</code></pre>
+<pre class="r"><code>A[A&lt;1] &lt;- 100 # Changes the elements in the matrix with values less than 1.
+A</code></pre>
+<pre><code>##       [,1]  [,2]  [,3]
+## [1,] 100.0  91.0 100.0
+## [2,]   4.5 100.0   8.2
+## [3,]  55.3 105.5  27.9</code></pre>
+</div>
+</div>
+<div id="more-on-characters" class="section level1">
+<h1>More on Characters</h1>
+<p>Let’ create a character string and assign it to <strong>s</strong>.</p>
+<pre class="r"><code>s &lt;- &quot;This is a character string&quot;</code></pre>
+<p>We can check the length and number of characters in <code>s</code>.</p>
+<pre class="r"><code>length(s)</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code>nchar(s)</code></pre>
+<pre><code>## [1] 26</code></pre>
+<div id="escape-sequences" class="section level3">
+<h3>Escape Sequences</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Sequence</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\backslash{n}\)</span></td>
+<td>Starts a new line</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\backslash{t}\)</span></td>
+<td>Horizontal tab</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\backslash{b}\)</span></td>
+<td>Invokes a backspace</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\backslash{\backslash}\)</span></td>
+<td>Used as a single backslash</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\backslash{&quot;}\)</span></td>
+<td>Includes a double quote</td>
+</tr>
+</tbody>
+</table>
+<p>Example</p>
+<pre class="r"><code>cat(&quot;here is a string \n split \t to neww\b \n\n\t lines&quot;)</code></pre>
+<pre><code>## here is a string 
+##  split    to neww 
+## 
+##   lines</code></pre>
+</div>
+<div id="substring-and-matching" class="section level3">
+<h3>substring and matching</h3>
+<p>The function <code>substr()</code> takes a string <strong>x</strong> and extracts the part of the string between two character positions (inclusive)</p>
+<pre class="r"><code>substr(s, start = 11, stop = 19)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>substr(s, start = 11, stop = 19) &lt;- &quot;CHARACTER&quot;</code></pre>
+<p>Its more easier to do with <code>sub()</code> and <code>gsub()</code></p>
+<pre class="r"><code>duck &lt;- &quot;Mother duck said quack, quack, quack.&quot;
+duck</code></pre>
+<pre><code>## [1] &quot;Mother duck said quack, quack, quack.&quot;</code></pre>
+<pre class="r"><code>dog &lt;- sub(pattern = &quot;duck&quot;, replacement = &quot;dog&quot;, duck )
+dog</code></pre>
+<pre><code>## [1] &quot;Mother dog said quack, quack, quack.&quot;</code></pre>
+<pre class="r"><code>gsub(pattern = &quot;quack&quot;, replacement = &quot;bow&quot;, dog)</code></pre>
+<pre><code>## [1] &quot;Mother dog said bow, bow, bow.&quot;</code></pre>
+</div>
+</div>
+<div id="factors" class="section level1">
+<h1>Factors</h1>
+<ul>
+<li>Factors represent categorical data.</li>
+<li>Factors can be ordered or unordered.</li>
+<li>Factors can be thought as integer vector with labels, like 1 means ‘low’, 2 means ‘high’, 3 means ‘very high’.</li>
+<li>Example data set
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Names
+</th>
+<th style="text-align:left;">
+Gender
+</th>
+<th style="text-align:left;">
+Month.Birth
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Kunal
+</td>
+<td style="text-align:left;">
+Male
+</td>
+<td style="text-align:left;">
+January
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ben
+</td>
+<td style="text-align:left;">
+Male
+</td>
+<td style="text-align:left;">
+March
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kritika
+</td>
+<td style="text-align:left;">
+Female
+</td>
+<td style="text-align:left;">
+March
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Reena
+</td>
+<td style="text-align:left;">
+Female
+</td>
+<td style="text-align:left;">
+December
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Narendra
+</td>
+<td style="text-align:left;">
+Male
+</td>
+<td style="text-align:left;">
+October
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Smriti
+</td>
+<td style="text-align:left;">
+Female
+</td>
+<td style="text-align:left;">
+October
+</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<p>We can create factors using the information in the above table:</p>
+<pre class="r"><code>(Names &lt;- c(&quot;Kunal&quot;, &quot;Ben&quot;, &quot;Kritika&quot;, &quot;Reena&quot;, &quot;Narendra&quot;, &quot;Smriti&quot;))</code></pre>
+<pre><code>## [1] &quot;Kunal&quot;    &quot;Ben&quot;      &quot;Kritika&quot;  &quot;Reena&quot;    &quot;Narendra&quot; &quot;Smriti&quot;</code></pre>
+<pre class="r"><code>(Gender &lt;- factor(c(&quot;Male&quot;, &quot;Male&quot;, &quot;Female&quot;, &quot;Female&quot;, &quot;Male&quot;, &quot;Female&quot;)))</code></pre>
+<pre><code>## [1] Male   Male   Female Female Male   Female
+## Levels: Female Male</code></pre>
+<pre class="r"><code>(Month.Birth &lt;- factor(c(&quot;January&quot;, &quot;March&quot;, &quot;March&quot;, &quot;December&quot;, &quot;October&quot;, &quot;October&quot;)))</code></pre>
+<pre><code>## [1] January  March    March    December October  October 
+## Levels: December January March October</code></pre>
+<pre class="r"><code>(Month.Birth &lt;- factor(c(&quot;January&quot;, &quot;March&quot;, &quot;March&quot;, &quot;December&quot;, &quot;October&quot;, &quot;October&quot;), levels = c(&quot;January&quot;, &quot;March&quot;, &quot;October&quot;, &quot;December&quot;)))</code></pre>
+<pre><code>## [1] January  March    March    December October  October 
+## Levels: January March October December</code></pre>
+<div id="extraction-and-subsetting" class="section level2">
+<h2>Extraction and subsetting</h2>
+<p>Which boy was born in March?</p>
+<pre class="r"><code>Names[Gender == &quot;Male&quot; &amp; Month.Birth == &quot;March&quot;]</code></pre>
+<pre><code>## [1] &quot;Ben&quot;</code></pre>
+</div>
+<div id="releveling-a-factor" class="section level2">
+<h2>Releveling a factor</h2>
+<pre class="r"><code>(levels(Month.Birth) &lt;- c(1, 3, 10, 12))</code></pre>
+<pre><code>## [1]  1  3 10 12</code></pre>
+<pre class="r"><code>(levels(Gender) &lt;- c(0, 1)) # 0 indicates female</code></pre>
+<pre><code>## [1] 0 1</code></pre>
+</div>
+<div id="defining-and-ordering-levels" class="section level2">
+<h2>Defining and Ordering levels</h2>
+<pre class="r"><code>(m &lt;- c(&quot;January&quot;, &quot;March&quot;, &quot;March&quot;, &quot;December&quot;, &quot;October&quot;, &quot;October&quot;))</code></pre>
+<pre><code>## [1] &quot;January&quot;  &quot;March&quot;    &quot;March&quot;    &quot;December&quot; &quot;October&quot;  &quot;October&quot;</code></pre>
+<pre class="r"><code>(Month.Birth &lt;- factor(m))</code></pre>
+<pre><code>## [1] January  March    March    December October  October 
+## Levels: December January March October</code></pre>
+<pre class="r"><code>(Month.Birth &lt;- factor(m, ordered = TRUE))</code></pre>
+<pre><code>## [1] January  March    March    December October  October 
+## Levels: December &lt; January &lt; March &lt; October</code></pre>
+<pre class="r"><code># we can explicity convert it to an ordered level
+m.lev &lt;- c(&quot;January&quot;, &quot;March&quot;, &quot;October&quot;, &quot;December&quot;)
+Month.Birth &lt;- factor(m,levels = m.lev, ordered = TRUE)
+levels(Month.Birth)</code></pre>
+<pre><code>## [1] &quot;January&quot;  &quot;March&quot;    &quot;October&quot;  &quot;December&quot;</code></pre>
+<pre class="r"><code># Checking the order
+Month.Birth[1] &lt; Month.Birth[5]</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="cuttingbinning" class="section level2">
+<h2>Cutting/binning</h2>
+<p>Suppose you want to bin <strong>y</strong> into <strong>small[0,2)</strong>, <strong>medium[2,4)</strong>, and <strong>large [4,6]</strong></p>
+<pre class="r"><code>y &lt;- c(0.53,5.4,1.5,3.33,0.45,0.01,2,4.2,1.99,1.01)
+table(cut(y, breaks = c(0,2,4,6), right = FALSE))</code></pre>
+<pre><code>## 
+## [0,2) [2,4) [4,6) 
+##     6     2     2</code></pre>
+<pre class="r"><code>table(cut(y, breaks = c(0,2,4,6), right = FALSE, include.lowest = TRUE)) # Note. include.lowest = TRUE only if right = FALSE</code></pre>
+<pre><code>## 
+## [0,2) [2,4) [4,6] 
+##     6     2     2</code></pre>
+<pre class="r"><code>table(cut(y, breaks = c(0,2,4,6), right = FALSE, include.lowest = TRUE, 
+    labels = c(&quot;small&quot;,&quot;medium&quot;, &quot;large&quot;)))</code></pre>
+<pre><code>## 
+##  small medium  large 
+##      6      2      2</code></pre>
+</div>
+</div>
+<div id="lists" class="section level1">
+<h1>Lists</h1>
+<ul>
+<li>Lists are sepecial types of vectors which can contain elements of different classes. You can also have a list as a component of another list.</li>
+<li>A single list can contain a numeric matrix, a logical array, a single character string, and a factor object.</li>
+</ul>
+<pre class="r"><code>(x &lt;- list(10:20, &quot;Khan&quot;, 1+2i, TRUE)); length(x)</code></pre>
+<pre><code>## [[1]]
+##  [1] 10 11 12 13 14 15 16 17 18 19 20
+## 
+## [[2]]
+## [1] &quot;Khan&quot;
+## 
+## [[3]]
+## [1] 1+2i
+## 
+## [[4]]
+## [1] TRUE</code></pre>
+<pre><code>## [1] 4</code></pre>
+<pre class="r"><code>(f &lt;- list(matrix(data = 1:4, nrow = 2, ncol = 2), x)); length(f)</code></pre>
+<pre><code>## [[1]]
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+## 
+## [[2]]
+## [[2]][[1]]
+##  [1] 10 11 12 13 14 15 16 17 18 19 20
+## 
+## [[2]][[2]]
+## [1] &quot;Khan&quot;
+## 
+## [[2]][[3]]
+## [1] 1+2i
+## 
+## [[2]][[4]]
+## [1] TRUE</code></pre>
+<pre><code>## [1] 2</code></pre>
+<p>We can create lists out of vectors, matrices and data frames.</p>
+<pre class="r"><code>my_vector &lt;- 1:10 
+my_matrix &lt;- matrix(1:9, ncol = 3)
+my_df &lt;- mtcars[1:10,] # to know about `mtcars` use ?mtcars
+
+# Construct list with these different elements:
+(my_list &lt;- list(my_vector, my_matrix, my_df)) </code></pre>
+<pre><code>## [[1]]
+##  [1]  1  2  3  4  5  6  7  8  9 10
+## 
+## [[2]]
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9
+## 
+## [[3]]
+##                    mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+## Duster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+## Merc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+## Merc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+## Merc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4</code></pre>
+<pre class="r"><code># Adapt list() call to give the components names
+(my_list &lt;- list(vector = my_vector, matrix =  my_matrix, dataframe = my_df))</code></pre>
+<pre><code>## $vector
+##  [1]  1  2  3  4  5  6  7  8  9 10
+## 
+## $matrix
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9
+## 
+## $dataframe
+##                    mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+## Duster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+## Merc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+## Merc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+## Merc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4</code></pre>
+<pre class="r"><code># print out the vector from the list
+my_list[[1]]</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<pre class="r"><code># now print the second element in the vector
+my_list[[1]][2]</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>my_list[[3]][1]</code></pre>
+<pre><code>##                    mpg
+## Mazda RX4         21.0
+## Mazda RX4 Wag     21.0
+## Datsun 710        22.8
+## Hornet 4 Drive    21.4
+## Hornet Sportabout 18.7
+## Valiant           18.1
+## Duster 360        14.3
+## Merc 240D         24.4
+## Merc 230          22.8
+## Merc 280          19.2</code></pre>
+<pre class="r"><code>my_list[[3]][&quot;disp&quot;]</code></pre>
+<pre><code>##                    disp
+## Mazda RX4         160.0
+## Mazda RX4 Wag     160.0
+## Datsun 710        108.0
+## Hornet 4 Drive    258.0
+## Hornet Sportabout 360.0
+## Valiant           225.0
+## Duster 360        360.0
+## Merc 240D         146.7
+## Merc 230          140.8
+## Merc 280          167.6</code></pre>
+<p>The retrieved component of a list can be treated as a stand-alone object. For e.g</p>
+<pre class="r"><code>f &lt;- list(matrix(data=1:4,nrow=2,ncol=2),c(T,F,T,T),&quot;hello&quot;)
+f[[1]] # retrieves the matrix</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4</code></pre>
+<pre class="r"><code># performing normal operations
+f[[1]] + 5.5 </code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]  6.5  8.5
+## [2,]  7.5  9.5</code></pre>
+<pre class="r"><code>f[[1]][1,2]</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>cat(f[[3]], &quot;you!&quot; )</code></pre>
+<pre><code>## hello you!</code></pre>
+<p>To overwrite a member of <code>f</code>, the assignment operator can be used.</p>
+<pre class="r"><code>f[[3]] &lt;- paste(f[[3]], &quot;you!&quot;); f</code></pre>
+<pre><code>## [[1]]
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+## 
+## [[2]]
+## [1]  TRUE FALSE  TRUE  TRUE
+## 
+## [[3]]
+## [1] &quot;hello you!&quot;</code></pre>
+<p>Inorder to access the second and third components of <code>f</code>, we use <code>[]</code> instead of <code>[[]]</code> because using double brackets on a list is always interpreted with respect to a single member. This is referred to as <strong>list slicing</strong> and lets you select multiple list items at once.</p>
+<pre class="r"><code>(f[c(2,3)])</code></pre>
+<pre><code>## [[1]]
+## [1]  TRUE FALSE  TRUE  TRUE
+## 
+## [[2]]
+## [1] &quot;hello you!&quot;</code></pre>
+<div id="naming-list-components" class="section level2">
+<h2>Naming list components</h2>
+<p>We can name list components using <code>name()</code>:</p>
+<pre class="r"><code>names(f) &lt;- c(&quot;matrix&quot;, &quot;logical&quot;, &quot;char&quot;); f</code></pre>
+<pre><code>## $matrix
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+## 
+## $logical
+## [1]  TRUE FALSE  TRUE  TRUE
+## 
+## $char
+## [1] &quot;hello you!&quot;</code></pre>
+<p>You can now perform member referencing using these names and the <code>$</code> operator, rather than the double square brackets.</p>
+<pre class="r"><code>f$matrix</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4</code></pre>
+<pre class="r"><code>f$logical</code></pre>
+<pre><code>## [1]  TRUE FALSE  TRUE  TRUE</code></pre>
+</div>
+<div id="nesting-lists" class="section level2">
+<h2>Nesting lists</h2>
+<ul>
+<li>A member of a list can itself be a list.</li>
+</ul>
+<pre class="r"><code>f</code></pre>
+<pre><code>## $matrix
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+## 
+## $logical
+## [1]  TRUE FALSE  TRUE  TRUE
+## 
+## $char
+## [1] &quot;hello you!&quot;</code></pre>
+<pre class="r"><code>names(x) &lt;- c(&quot;num&quot;, &quot;char&quot;, &quot;complex&quot;, &quot;logical&quot; ); x</code></pre>
+<pre><code>## $num
+##  [1] 10 11 12 13 14 15 16 17 18 19 20
+## 
+## $char
+## [1] &quot;Khan&quot;
+## 
+## $complex
+## [1] 1+2i
+## 
+## $logical
+## [1] TRUE</code></pre>
+<pre class="r"><code>f$list_x &lt;- x; f </code></pre>
+<pre><code>## $matrix
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+## 
+## $logical
+## [1]  TRUE FALSE  TRUE  TRUE
+## 
+## $char
+## [1] &quot;hello you!&quot;
+## 
+## $list_x
+## $list_x$num
+##  [1] 10 11 12 13 14 15 16 17 18 19 20
+## 
+## $list_x$char
+## [1] &quot;Khan&quot;
+## 
+## $list_x$complex
+## [1] 1+2i
+## 
+## $list_x$logical
+## [1] TRUE</code></pre>
+<p>To retreive members of the inner list;</p>
+<pre class="r"><code>f$list_x$num[c(1,3,6)]</code></pre>
+<pre><code>## [1] 10 12 15</code></pre>
+</div>
+</div>
+<div id="data-frames" class="section level1">
+<h1>Data frames</h1>
+<ul>
+<li>Data frames are used to store tabular data.</li>
+<li>Data frames have an advantage over matrices in that they can store objects of different classes.</li>
+<li>So in a way data frames are a collection of lists with the same length.</li>
+</ul>
+<pre class="r"><code>(x &lt;- data.frame(Sl = 1:4, Countries = c(&quot;Germany&quot;, &quot;Brazil&quot;, &quot;Argentina&quot;, &quot;France&quot;), Rank = c(1,3,2,4))
+)</code></pre>
+<pre><code>##   Sl Countries Rank
+## 1  1   Germany    1
+## 2  2    Brazil    3
+## 3  3 Argentina    2
+## 4  4    France    4</code></pre>
+<pre class="r"><code>dim(x)</code></pre>
+<pre><code>## [1] 4 3</code></pre>
+<ul>
+<li>Each row in the data frame is called a ‘record’ and each column called ‘variable’.</li>
+<li>Portions of data can be extracted with <code>[]</code></li>
+</ul>
+<pre class="r"><code>x[1,2] # this gives the element at row 1, col 2</code></pre>
+<pre><code>## [1] &quot;Germany&quot;</code></pre>
+<pre class="r"><code># or 
+x$Countries[1]</code></pre>
+<pre><code>## [1] &quot;Germany&quot;</code></pre>
+<p>Each variables retain their class upon extraction. For e.g</p>
+<pre class="r"><code>class(x$Countries)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>Lets look at another example</p>
+<pre class="r"><code>Name &lt;-  c(&quot;Kunal&quot;, &quot;Ben&quot;, &quot;Kritika&quot;, &quot;Reena&quot;, &quot;Narendra&quot;, &quot;Smriti&quot;)
+Gender &lt;- c(&quot;M&quot;, &quot;M&quot;, &quot;F&quot;, &quot;F&quot;, &quot;M&quot;, &quot;F&quot;)
+Age &lt;- c(20, 18, 30, 24, 24, 27)
+mydata &lt;- data.frame(Name, Gender, Age)
+class(mydata$Name)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>To prevent this automatic conversion of strings to factors when using <code>data.frame</code>, set the optional argument <code>stringsAsFactors = FALSE</code>.</p>
+<pre class="r"><code>mydata &lt;- data.frame(Name, Gender, Age, stringsAsFactors = FALSE)
+class(mydata$Name)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div id="adding-data-columns-and-combining-data-frames" class="section level2">
+<h2>Adding data columns and combining data frames</h2>
+<pre class="r"><code>newrecord &lt;- data.frame(Name = &quot;Manoj&quot;, Gender = &quot;M&quot;, Age = 18)
+(mydata &lt;- rbind(mydata, newrecord))</code></pre>
+<pre><code>##       Name Gender Age
+## 1    Kunal      M  20
+## 2      Ben      M  18
+## 3  Kritika      F  30
+## 4    Reena      F  24
+## 5 Narendra      M  24
+## 6   Smriti      F  27
+## 7    Manoj      M  18</code></pre>
+<p>Lets create a new column</p>
+<pre class="r"><code>Funny &lt;- c(&quot;High&quot;,&quot;High&quot;,&quot;Low&quot;,&quot;Med&quot;,&quot;High&quot;,&quot;Med&quot;, &quot;High&quot;)
+(Funny &lt;- factor(x=Funny,levels=c(&quot;Low&quot;,&quot;Med&quot;,&quot;High&quot;)))</code></pre>
+<pre><code>## [1] High High Low  Med  High Med  High
+## Levels: Low Med High</code></pre>
+<p>Using <code>cbind()</code> we can now add this column</p>
+<pre class="r"><code>dim(mydata); length(Funny)</code></pre>
+<pre><code>## [1] 7 3</code></pre>
+<pre><code>## [1] 7</code></pre>
+<pre class="r"><code>(mydata &lt;- cbind(mydata, Funny))</code></pre>
+<pre><code>##       Name Gender Age Funny
+## 1    Kunal      M  20  High
+## 2      Ben      M  18  High
+## 3  Kritika      F  30   Low
+## 4    Reena      F  24   Med
+## 5 Narendra      M  24  High
+## 6   Smriti      F  27   Med
+## 7    Manoj      M  18  High</code></pre>
+</div>
+<div id="logical-record-subsets" class="section level2">
+<h2>Logical Record Subsets</h2>
+<p>Say you want to subset using a particular level. Lets look at the <code>'mydata'</code> example</p>
+<pre class="r"><code>names(mydata)</code></pre>
+<pre><code>## [1] &quot;Name&quot;   &quot;Gender&quot; &quot;Age&quot;    &quot;Funny&quot;</code></pre>
+<p>Lets subset the data frame only for males</p>
+<pre class="r"><code>mydata[mydata$Gender == &quot;M&quot;,]</code></pre>
+<pre><code>##       Name Gender Age Funny
+## 1    Kunal      M  20  High
+## 2      Ben      M  18  High
+## 5 Narendra      M  24  High
+## 7    Manoj      M  18  High</code></pre>
+<p>Since the subset belongs only to males, you could now remove the Gender column</p>
+<pre class="r"><code>mydata[mydata$Gender == &quot;M&quot;, -2]</code></pre>
+<pre><code>##       Name Age Funny
+## 1    Kunal  20  High
+## 2      Ben  18  High
+## 5 Narendra  24  High
+## 7    Manoj  18  High</code></pre>
+<p>Let’s extract from mydata the full records for individuals who are more than 20 years old AND/OR have a high degree of funniness.</p>
+<pre class="r"><code>(mydata[mydata$Age &gt;= 20 &amp; mydata$Funny == &quot;High&quot;,])</code></pre>
+<pre><code>##       Name Gender Age Funny
+## 1    Kunal      M  20  High
+## 5 Narendra      M  24  High</code></pre>
+<pre class="r"><code>(mydata[mydata$Age &gt;= 20 | mydata$Funny == &quot;Low&quot;,])</code></pre>
+<pre><code>##       Name Gender Age Funny
+## 1    Kunal      M  20  High
+## 3  Kritika      F  30   Low
+## 4    Reena      F  24   Med
+## 5 Narendra      M  24  High
+## 6   Smriti      F  27   Med</code></pre>
+</div>
+</div>
+<div id="basic-plotting" class="section level1">
+<h1>Basic plotting</h1>
+<div id="coordinate-vectors" class="section level2">
+<h2>Coordinate vectors</h2>
+<ul>
+<li>R has incredibly flexible plotting tools for data and model visualisations.</li>
+<li>Treat your screen as a blan, 2 dimensional canvas.</li>
+<li>Plot points using x- and y- coordinates.</li>
+<li>The <code>plot()</code> function takes two vectors (x and y) and opens a <em>graphics device</em> where it displays the result.</li>
+<li>If a graphics device is already open, R’s default behaviour is to refresh the device, overwriting the current contents with the new plot.</li>
+</ul>
+<pre class="r"><code>f &lt;- c(1.1,2,3.5,3.9,4.2)
+b &lt;- c(2,2.2,-1.3,0,0.2)
+plot(f,b)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-95-1.png" width="672" /></p>
+<p>You could also use a matrix instead. Try this one!</p>
+<pre class="r"><code>plot(cbind(f,b))</code></pre>
+</div>
+<div id="plot-types" class="section level2">
+<h2>Plot types</h2>
+<p>The arguments that enter the <code>plot()</code> function are called graphical parameters. Some most commonly used graphical parameters are <strong>type</strong>, <strong>main</strong>, <strong>xlab</strong>, <strong>ylab</strong>, <strong>col</strong>, <strong>pch</strong>, <strong>cex</strong> (character expansion), <strong>lty</strong>, <strong>lwd</strong>, <strong>xlim</strong>, <strong>ylim</strong>.</p>
+<pre class="r"><code>plot(f,b, type = &quot;l&quot;)
+plot(f,b, type = &quot;b&quot;)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-97-1.png" width="672" /></p>
+</div>
+<div id="title-and-axis-labels" class="section level2">
+<h2>Title and axis labels</h2>
+<pre class="r"><code>plot(f,b, type = &quot;o&quot;, main = &quot;My Title&quot;, xlab = &quot;My x-axis label&quot;, ylab = &quot;My y-axis label&quot;)
+plot(f,b, type = &quot;s&quot;, main = &quot;My Title&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-98-1.png" width="672" /></p>
+</div>
+<div id="colour" class="section level2">
+<h2>Colour</h2>
+<pre class="r"><code>plot(f,b, type = &quot;o&quot;, main = &quot;My Title&quot;, col = &quot;firebrick4&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;)
+title(xlab = &quot;My X-axis label&quot;, col.lab = &quot;green&quot;)
+title(ylab = &quot;My Y-axis label&quot;, col.lab = &quot;blue&quot;)
+plot(f,b, type = &quot;s&quot;, main = &quot;My Title&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, col = &quot;gold&quot;, col.main = &quot;red&quot;)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-99-1.png" width="672" /></p>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<object width="100%" height="500" data="https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf">
+</object>
+If the above pdf is not displayed in your mobile, click <a href="https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf">here</a> to download the pdf.
+<p>
+<strong>Source</strong>:<a href="https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf">www.nceas.ucsb.edu</a>
+</p>
+</html>
+</div>
+<div id="appearances" class="section level2">
+<h2>Appearances</h2>
+<p>Use <code>?par()</code>, <code>?pch()</code> to know about graphical parameters in appearances.</p>
+<pre class="r"><code>plot(f,b, type = &quot;o&quot;, main = &quot;My Title&quot;, col = &quot;firebrick4&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, xlim = c(2,3))
+title(xlab = &quot;My X-axis label&quot;, col.lab = &quot;green&quot;)
+title(ylab = &quot;My Y-axis label&quot;, col.lab = &quot;blue&quot;)
+plot(f,b, type = &quot;s&quot;, main = &quot;My Title&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, col = &quot;gold&quot;, col.main = &quot;red&quot;, ylim = c(0, 2))</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-100-1.png" width="672" /></p>
+<pre class="r"><code>plot(f,b, type = &quot;o&quot;, main = &quot;My Title&quot;, col = &quot;firebrick4&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, pch = 4)
+title(xlab = &quot;My X-axis label&quot;, col.lab = &quot;green&quot;)
+title(ylab = &quot;My Y-axis label&quot;, col.lab = &quot;blue&quot;)
+plot(f,b, type = &quot;b&quot;, main = &quot;My Title&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, col = &quot;blue&quot;, col.main = &quot;red&quot;, pch = 10)
+plot(f,b, type = &quot;o&quot;, main = &quot;My Title&quot;, col = &quot;firebrick4&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, pch = 4, lwd = 4)
+title(xlab = &quot;My X-axis label&quot;, col.lab = &quot;green&quot;)
+title(ylab = &quot;My Y-axis label&quot;, col.lab = &quot;blue&quot;)
+plot(f,b, type = &quot;b&quot;, main = &quot;My Title&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, col = &quot;blue&quot;, col.main = &quot;red&quot;, pch = 10, lwd = 6)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-101-1.png" width="672" /></p>
+</div>
+<div id="adding-points-lines-and-text" class="section level2">
+<h2>Adding Points, Lines, and Text</h2>
+<ul>
+<li>Normally <code>plot()</code> refreshes the active graphics device for a new plotting region.</li>
+<li>We might want to add points, lines and text to an existing plot.</li>
+<li>Some useful functions include:
+<ul>
+<li><code>points()</code>: adds points</li>
+<li><code>lines()</code>, <code>abline()</code>, <code>segments()</code>: adds lines</li>
+<li><code>text()</code>: writes text</li>
+<li><code>arrows()</code>: adds arrows</li>
+<li><code>legend()</code>: adds a legend</li>
+</ul></li>
+</ul>
+<p>Lets consider an example. We shall recreate the following plot. The data points will be plotted differently according to their <code>x</code> and <code>y</code> locations, depending on their relation to the “sweet spot” pointed out in the figure.</p>
+<ul>
+<li>Points with a <code>y</code> value greater than 5 are marked with a purple ×;</li>
+<li>points with a <code>y</code> value less than −5 are marked with a green +.</li>
+<li>Points between these two <code>y</code> values but still outside of the sweet spot are marked with a ◦.</li>
+<li>Finally, points in the sweet spot (with <code>x</code> between 5 and 15 and with <code>y</code> between −5 and 5) are marked as a blue •.</li>
+<li>Red horizontal and vertical lines delineate the sweet spot, which is labeled with an arrow, and there’s also a legend.</li>
+</ul>
+<p>Lets begin by creating a hypothetical dataset.</p>
+<pre class="r"><code>(x &lt;- 1:20)</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20</code></pre>
+<pre class="r"><code>(y &lt;- c(-1.49,3.37,2.59,-2.78,-3.94,-0.92,6.43,8.51,3.41,-8.23,
+-12.01,-6.58,2.87,14.12,9.63,-4.58,-14.78,-11.67,1.17,15.62))</code></pre>
+<pre><code>##  [1]  -1.49   3.37   2.59  -2.78  -3.94  -0.92   6.43   8.51   3.41  -8.23
+## [11] -12.01  -6.58   2.87  14.12   9.63  -4.58 -14.78 -11.67   1.17  15.62</code></pre>
+<p>So now that we have the dataset ready we can start plotting. We shall recreate the plot given below stepwise.
+<img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-103-1.png" width="672" /></p>
+<ol style="list-style-type: decimal">
+<li>Lets create an empty plotting region where lines and points can be added.</li>
+</ol>
+<pre class="r"><code>plot(x, y, type = &quot;n&quot;, main = &quot;&quot;)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-104-1.png" width="672" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>The <code>abline</code> function is a simple way to add straight lines spanning a plot.</li>
+</ol>
+<pre class="r"><code>abline(h = c(-5, 5), col = &quot;red&quot;, lty = 2, lwd = 2) # h adds a horizontal line at the values of y (-5 and 5), to add verticle lines you could have used v = (5,15)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Now we can add shorter line segments (and not lines spannig the entire plot) between the horizontal lines drawn in step 2.</li>
+</ol>
+<pre class="r"><code>segments(x0=c(5,15),y0=c(-5,-5),x1=c(5,15),y1=c(5,5),col=&quot;red&quot;,lty=3, lwd=2)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Now we can start adding points to the plot using <code>points()</code>.
+<ol style="list-style-type: lower-roman">
+<li><code>x[y&gt;=5]</code> gives all the values of <code>x</code> for which the corresponding <code>y</code> values are <code>&gt;=</code> 5.</li>
+<li><code>y[y&gt;=5]</code> gives the subset of <code>y</code> values <code>&gt;=</code> 5.</li>
+<li>Both i. and ii. combine to give the coordinates in the plot.</li>
+</ol>
+<pre class="r"><code>points(x[y&gt;=5],y[y&gt;=5],pch=4,col=&quot;darkmagenta&quot;,cex=2)</code></pre></li>
+</ol>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-110-1.png" width="672" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Now let’s extracts the coordinates where y values are less than or equal to −5. A + point character is used, and you set the color to dark green.</li>
+</ol>
+<pre class="r"><code>points(x[y&lt;=-5],y[y&lt;=-5],pch=3,col=&quot;darkgreen&quot;,cex=2)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-112-1.png" width="672" /></p>
+<ol start="6" style="list-style-type: decimal">
+<li>The sixth step adds the blue “sweet spot” points, which are identified with <code>(x&gt;=5&amp;x&lt;=15)&amp;(y&gt;-5&amp;y&lt;5)</code>.</li>
+</ol>
+<pre class="r"><code>points(x[(x&gt;=5&amp;x&lt;=15)&amp;(y&gt;-5&amp;y&lt;5)],y[(x&gt;=5&amp;x&lt;=15)&amp;(y&gt;-5&amp;y&lt;5)],pch=19, col=&quot;blue&quot;)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-114-1.png" width="672" /></p>
+<ol start="7" style="list-style-type: decimal">
+<li>This next command identifies the remaining points in the data set (with an x value that is either less than 5 OR greater than 15 AND a y value between −5 and 5). No graphical parameters are specified, so these points are plotted with the default black ◦.</li>
+</ol>
+<pre class="r"><code>points(x[(x&lt;5|x&gt;15)&amp;(y&gt;-5&amp;y&lt;5)],y[(x&lt;5|x&gt;15)&amp;(y&gt;-5&amp;y&lt;5)])</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-116-1.png" width="672" /></p>
+<ol start="8" style="list-style-type: decimal">
+<li>To draw lines connecting the coordinates in x and y, you use lines. Here you’ve also set lty to 4, which draws a dash-dot-dash style line.</li>
+</ol>
+<pre class="r"><code>lines(x,y,lty=4)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-118-1.png" width="672" /></p>
+<ol start="9" style="list-style-type: decimal">
+<li>The ninth line of code adds the arrow pointing to the sweet spot.</li>
+</ol>
+<pre class="r"><code>arrows(x0=8,y0=14,x1=11,y1=2.5)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
+<ol start="10" style="list-style-type: decimal">
+<li>Now we shall add a text.</li>
+</ol>
+<pre class="r"><code>text(x=8,y=15,labels=&quot;sweet spot&quot;)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p>
+<ol start="11" style="list-style-type: decimal">
+<li>Finally, we can add alegend to the plot.</li>
+</ol>
+<pre class="r"><code>legend(&quot;bottomleft&quot;,
+    legend=c(&quot;overall process&quot;,&quot;sweet&quot;,&quot;standard&quot;,
+    &quot;too big&quot;,&quot;too small&quot;,&quot;sweet y range&quot;,&quot;sweet x range&quot;),
+    pch=c(NA,19,1,4,3,NA,NA),lty=c(4,NA,NA,NA,NA,2,3),
+    col=c(&quot;black&quot;,&quot;blue&quot;,&quot;black&quot;,&quot;darkmagenta&quot;,&quot;darkgreen&quot;,&quot;red&quot;,&quot;red&quot;),
+    lwd=c(1,NA,NA,NA,NA,2,2),pt.cex=c(NA,1,1,2,2,NA,NA),ncol = 2, cex = 0.7)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p>
+</div>
+<div id="barplots" class="section level2">
+<h2>Barplots</h2>
+<p>Let’s use the <code>mtcars</code> data set to draw barplots. You can use<code>?mtcars</code> to check the details of the data set.</p>
+<pre class="r"><code>mtcars[1:5,] #gives you the first five rows </code></pre>
+<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2</code></pre>
+<pre class="r"><code>barplot(table(mtcars$cyl))</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-125-1.png" width="672" /></p>
+<p>To make tings interesting, we can use another variable (factor) like <code>am</code> which describes the transmission as 0 = automatic and 1 = manual.
+So how many 4, 6, and 8 cylinder cars are manual or automatic?</p>
+<pre class="r"><code>par(mfrow = c(2,2))
+cyl_matrix &lt;- table(mtcars$am, mtcars$cyl)
+
+barplot(cyl_matrix, legend=TRUE, main = &quot;(A)&quot;) # gives you a stacked plot with a legend
+
+barplot(cyl_matrix, legend.text = c(&quot;automatic&quot;, &quot;manual&quot;), args.legend = list(x = &quot;top&quot;, cex = 0.6), main = &quot;(B)&quot;)
+
+barplot(cyl_matrix, beside = TRUE, legend.text = c(&quot;automatic&quot;, &quot;manual&quot;), args.legend = list(x = &quot;top&quot;, cex = 0.75), las = 1, main = &quot;(C)&quot;) # las=1 forces the lables on the vertical axis to appear horizontally rather than parallel to it.
+
+barplot(cyl_matrix, col = c(&quot;red&quot;, &quot;blue&quot;), beside = TRUE, horiz = TRUE,legend.text = c(&quot;automatic&quot;, &quot;manual&quot;), args.legend = list(x = &quot;bottomright&quot;, cex = 0.65), names.arg = c(&quot;4-Cyl&quot;, &quot;6-Cyl&quot;, &quot;8-Cyl&quot;), las = 1, main=&quot;(D)&quot;)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
+<blockquote>
+<p><strong>Note:</strong> <br>
+You could have drawn a legend separately as done in case of <code>plot()</code> via <code>legend()</code>, but this way automates the color assignment to ensure the reference keys match the precise shading of the bars themselves.</p>
+</blockquote>
+</div>
+<div id="pie-chart" class="section level2">
+<h2>Pie Chart</h2>
+<pre class="r"><code>pie(table(mtcars$cyl),labels=c(&quot;V4&quot;,&quot;V6&quot;,&quot;V8&quot;),col=c(&quot;white&quot;,&quot;gray&quot;,&quot;black&quot;),main=&quot;Performance cars\nby cylinders&quot;)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
+<blockquote>
+<p><strong>Note</strong>
+Pie charts are a very bad way of displaying information. The eye is good at judging linear measures and bad at judging relative areas. A bar chart or dot chart is a preferable way of displaying this type of data.
+Cleveland (1985), page 264: “Data that can be shown by pie charts always can be shown by a dot chart. This means that judgements of position along a common scale can be made instead of the less accurate angle judgements.” This statement is based on the empirical investigations of Cleveland and McGill as well as investigations by perceptual psychologists.</p>
+</blockquote>
+<p>You can see in the following charts that <code>pie()</code> is rather fun than science, as mentionend in the domcumentation.</p>
+<pre class="r"><code>par(mfrow = c(1,2))
+n &lt;- 200
+pie(rep(1, n), labels = &quot;&quot;, col = rainbow(n), border = NA)
+
+pie(c(Sky = 85, &quot;Sunny side of\npyramid&quot; = 17, &quot;Shady side of\npyramid&quot; = 5),
+    init.angle = 315, col = c(&quot;deepskyblue&quot;, &quot;yellow&quot;, &quot;yellow3&quot;), border = FALSE)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
+</div>
+<div id="histograms" class="section level2">
+<h2>Histograms</h2>
+<ul>
+<li>Barplots are really good in case of categorical variables but not good enough for numeric-continuous variables.</li>
+<li>To draw a histogram, let’s use the <code>hp</code> horsepower in the <code>mtcars</code> dataset.</li>
+</ul>
+<pre class="r"><code>hist(mtcars$hp)
+arrows(x0 = 280, x1 = 180, y0 = 9, y1 = 7, pch = -9658)
+text(x = 285, y = 9.5, labels = &quot;Positively Skewed&quot;)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
+<p>Let’s customise the histogram:</p>
+<pre class="r"><code>hist(mtcars$hp,breaks=seq(0,400,25),col=&quot;gray&quot;,main=&quot;Horsepower&quot;,xlab=&quot;HP&quot;, las = 1, ylim = c(0,9))
+abline(v=c(mean(mtcars$hp),median(mtcars$hp)),lty=c(1,2),lwd=2, col= c(&quot;red&quot;, &quot;blue&quot;))
+legend(&quot;topright&quot;,legend=c(&quot;mean HP&quot;,&quot;median HP&quot;),lty=c(1,2),lwd=3, col= c(&quot;red&quot;, &quot;blue&quot;))
+text(x = mean(mtcars$hp) +13, y = 8.5, col = &quot;red&quot;, labels = round(mean(mtcars$hp)))
+text(x = median(mtcars$hp) -13, y = 8.5, col = &quot;blue&quot;, labels = round(median(mtcars$hp)))</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-130-1.png" width="672" /></p>
+</div>
+<div id="box-and-whisker-plot" class="section level2">
+<h2>Box-and-Whisker plot</h2>
+<p>Lets use the <code>mag</code> column in the <code>quakes</code> data set. Use <code>?quakes</code> to read about the data set.</p>
+<pre class="r"><code>boxplot(quakes$mag)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-131-1.png" width="672" /></p>
+<ul>
+<li>We can also create side-by-side box plots.</li>
+<li>Consider the <code>quakes</code> data set.</li>
+<li>The variable <code>mag</code> defines the Richter magnitude, and <code>stations</code> defines the number of stations reporting.</li>
+</ul>
+<pre class="r"><code>str(quakes)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    1000 obs. of  5 variables:
+##  $ lat     : num  -20.4 -20.6 -26 -18 -20.4 ...
+##  $ long    : num  182 181 184 182 182 ...
+##  $ depth   : int  562 650 42 626 649 195 82 194 211 622 ...
+##  $ mag     : num  4.8 4.2 5.4 4.1 4 4 4.8 4.4 4.7 4.3 ...
+##  $ stations: int  41 15 43 19 11 12 43 15 35 19 ...</code></pre>
+<pre class="r"><code>max(quakes$depth); min(quakes$depth)</code></pre>
+<pre><code>## [1] 680</code></pre>
+<pre><code>## [1] 40</code></pre>
+<pre class="r"><code>depth_cut &lt;- cut(quakes$stations, breaks = c(0, 50,  100, 150, 200), right = FALSE)
+head(depth_cut)</code></pre>
+<pre><code>## [1] [0,50) [0,50) [0,50) [0,50) [0,50) [0,50)
+## Levels: [0,50) [50,100) [100,150) [150,200)</code></pre>
+<ul>
+<li>So the depth have been put in threee groups.</li>
+<li>Now we are interested to know <strong>how the magnitue is correlated to the depth of an earthquake</strong>.</li>
+</ul>
+<pre class="r"><code>boxplot(quakes$mag ~ depth_cut, xlab = &quot;Depth (in km)&quot;, ylab = &quot;Magnitude&quot;, col = &quot;grey&quot;)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-133-1.png" width="672" /></p>
+<ul>
+<li>We can see the <strong>the more the depth of an earthquake, the greater is the magnitude</strong>.</li>
+</ul>
+</div>
+<div id="scatterplots" class="section level2">
+<h2>Scatterplots</h2>
+<ul>
+<li>We will work with the <code>iris</code> data set.</li>
+<li>Collected in the mid- 1930s, this data frame of 150 rows and 5 columns consists of petal and sepal measurements for three species of perennial iris flowers—<em>Iris setosa</em>, <em>Iris virginica</em>, and <em>Iris versicolor</em> (Anderson, 1935; Fisher, 1936).</li>
+<li>Lets see the frequency distribution of these different species of flowers.</li>
+</ul>
+<pre class="r"><code>head(iris)</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<pre class="r"><code>table(iris$Species)</code></pre>
+<pre><code>## 
+##     setosa versicolor  virginica 
+##         50         50         50</code></pre>
+<ul>
+<li>Lets see a simple plot of petal length and width (see fig (A)).</li>
+</ul>
+<blockquote>
+<p>We see that <strong>longer petals also wider</strong>.</p>
+</blockquote>
+<ul>
+<li>But, we do not know how they vary with species.</li>
+</ul>
+<blockquote>
+<p>Similarly, <strong>virginica</strong> has the longest and widest petals.</p>
+</blockquote>
+<pre class="r"><code>par(mfrow = c(1,2))
+
+plot(iris[,4],iris[,3],xlab=&quot;Petal Width (cm)&quot;, ylab=&quot;Petal Length (cm)&quot;, las = 1, main = &quot;(A)&quot;)
+
+plot(iris[,4],iris[,3],type=&quot;n&quot;,xlab=&quot;Petal Width (cm)&quot;, ylab=&quot;Petal Length (cm)&quot;, las = 1, main = &quot;(B)&quot;)
+points(iris[iris$Species==&quot;setosa&quot;,4],iris[iris$Species==&quot;setosa&quot;,3],pch=19,col=&quot;green&quot;)
+points(iris[iris$Species==&quot;virginica&quot;,4],iris[iris$Species==&quot;virginica&quot;,3],pch=19,col=&quot;blue&quot;)
+points(iris[iris$Species==&quot;versicolor&quot;,4],iris[iris$Species==&quot;versicolor&quot;,3],pch=19,col=&quot;red&quot;)
+legend(&quot;topleft&quot;,legend=c(&quot;setosa&quot;,&quot;virginica&quot;,&quot;versicolor&quot;), col=c(&quot;green&quot;,&quot;blue&quot;,&quot;red&quot;),pch=c(19,19,19), cex = 0.8)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-135-1.png" width="672" /></p>
+<ul>
+<li>You can generate the same image more simply by first setting up vectors that specify the desired point character and color for each individual observation.</li>
+</ul>
+<pre class="r"><code># Create pch for iris, 
+iris_pch &lt;- rep(19, nrow(iris))
+
+# Overwrite and change the pch for setosa species = 1, where 1 is the pch
+iris_pch[iris$Species == &quot;setosa&quot;] &lt;- 1
+
+# You can also have a diferent pch for virginica = 3
+iris_pch[iris$Species == &quot;virginica&quot;] &lt;- 3
+
+# Now we can set the colors, starting with any default col
+iris_col &lt;- rep(&quot;red&quot;, times = nrow(iris))
+
+# Lets set the col for setosa and virginica as green and blue
+iris_col[iris$Species == &quot;setosa&quot;] &lt;- &quot;green&quot;
+iris_col[iris$Species == &quot;virginica&quot;] &lt;- &quot;blue&quot;
+
+# Now, `iris_pch` and `iris_col` now can be used as the defined pch and col
+# Lets plot:
+plot(iris[,4], iris[,3], pch = iris_pch, col = iris_col, xlab=&quot;Petal Width (cm)&quot;, ylab=&quot;Petal Length (cm)&quot;, las = 1)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-136-1.png" width="672" /></p>
+<ul>
+<li>This <strong>vectorised operation</strong> as done above has made it easier to create a <strong>matrix of plots</strong>:</li>
+</ul>
+<pre class="r"><code># This is the default plot without any custoimisation.
+plot(iris, main = &quot;Default Plot\nNo Customisation&quot;)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-137-1.png" width="672" /></p>
+<pre class="r"><code># This is the plot that you create with the customised pch and col
+plot(iris, pch = iris_pch, col = iris_col, main = &quot;Customised Plot&quot;)</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-137-2.png" width="672" /></p>
+<pre class="r"><code># You can also do this for a select number of variables
+plot(iris[,2:4],pch = iris_pch, col = iris_col, main = &quot;Customised Plot\nFor Three Variables Only&quot; )</code></pre>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-137-3.png" width="672" /></p>
+</div>
+</div>
+<div id="more-on-data-frames" class="section level1">
+<h1>More on data frames:</h1>
+<div id="finding-missing-values-i.e.-nas-or-nans-in-dataset-objects." class="section level2">
+<h2>Finding missing values i.e. <strong>NA</strong>s or <strong>NaN</strong>s in dataset objects.</h2>
+<p>Example:</p>
+<pre class="r"><code>x &lt;- c(1,2,NA,4,5,6)
+is.na(x)</code></pre>
+<pre><code>## [1] FALSE FALSE  TRUE FALSE FALSE FALSE</code></pre>
+<pre class="r"><code>is.nan(x)</code></pre>
+<pre><code>## [1] FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<ul>
+<li>A NaN is also NA but the converse is not true.</li>
+</ul>
+<pre class="r"><code>x&lt;- c(1,2,NA, NaN, 5,6)
+is.na(x)</code></pre>
+<pre><code>## [1] FALSE FALSE  TRUE  TRUE FALSE FALSE</code></pre>
+<pre class="r"><code>is.nan(x)</code></pre>
+<pre><code>## [1] FALSE FALSE FALSE  TRUE FALSE FALSE</code></pre>
+<ul>
+<li>Removing NAs</li>
+</ul>
+<pre class="r"><code>x &lt;- c(12, 56, 78, NA, 55, NA, NA, 78)
+yes.na &lt;- is.na(x)
+x[!yes.na]</code></pre>
+<pre><code>## [1] 12 56 78 55 78</code></pre>
+<pre class="r"><code># or
+no.na &lt;- !yes.na
+x[no.na]</code></pre>
+<pre><code>## [1] 12 56 78 55 78</code></pre>
+<pre class="r"><code># or
+
+DF &lt;- data.frame(x = c(1, 2, 3), y = c(0, 10, NA))
+na.omit(DF)</code></pre>
+<pre><code>##   x  y
+## 1 1  0
+## 2 2 10</code></pre>
+</div>
+<div id="the-apply-function" class="section level2">
+<h2>The <code>apply()</code> function</h2>
+<ul>
+<li>Applying a function to each element of an object</li>
+</ul>
+<pre class="r"><code>x &lt;- 1:20
+dim(x) &lt;- c(5,4)
+colnames(x) &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;)
+apply(x, MARGIN=1, sum) #sums over the rows of the matrix x </code></pre>
+<pre><code>## [1] 34 38 42 46 50</code></pre>
+<pre class="r"><code>apply(x, MARGIN=2, mean)</code></pre>
+<pre><code>##  a  b  c  d 
+##  3  8 13 18</code></pre>
+</div>
+<div id="the-tapply-function." class="section level2">
+<h2>The <code>tapply()</code> function.</h2>
+<ul>
+<li>The tapply function is useful when we need to break up a vector into groups defined by some classifying factor, compute a function on the subsets, and return the results in a convenient form. You can even specify multiple factors as the grouping variable, for example treatment and gender, or team and handedness.</li>
+<li>Lets say we have two vectors</li>
+</ul>
+<pre class="r"><code>students &lt;- factor(c(&quot;a&quot;,&quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;a&quot;,&quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;,&quot;a&quot;,&quot;b&quot;, &quot;c&quot;, &quot;d&quot;,&quot;a&quot;,&quot;b&quot;, &quot;c&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;))
+levels(students); length(students)</code></pre>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot;</code></pre>
+<pre><code>## [1] 20</code></pre>
+<pre class="r"><code>marks &lt;- c(12, 10, 15,16,12,18,19,13,15,14,1,12,18,20,21,15,16, 12, 14, 15)
+length(marks)</code></pre>
+<pre><code>## [1] 20</code></pre>
+<ul>
+<li>We now want to calculate the mean of a, b, c,d and e</li>
+</ul>
+<pre class="r"><code>(mean.mar.stu &lt;- tapply(X = marks, INDEX = students, FUN = mean))</code></pre>
+<pre><code>##    a    b    c    d    e 
+## 12.8 14.0 15.4 17.0 13.0</code></pre>
+<pre class="r"><code>(mean.mar.stu &lt;- tapply(X = marks, INDEX = marks, FUN = length)) # this is like creating a frequency distribution.</code></pre>
+<pre><code>##  1 10 12 13 14 15 16 18 19 20 21 
+##  1  1  4  1  2  4  2  2  1  1  1</code></pre>
+<pre class="r"><code>(mean.mar.stu &lt;- tapply(X = students, INDEX = students, FUN = length))</code></pre>
+<pre><code>## a b c d e 
+## 5 5 5 3 2</code></pre>
+<ul>
+<li>another example: using the <code>iris</code> dataset from the base R (we have used this data set before).</li>
+</ul>
+<pre class="r"><code>str(iris)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<pre class="r"><code>tapply(iris$Sepal.Length, iris$Species, mean)</code></pre>
+<pre><code>##     setosa versicolor  virginica 
+##      5.006      5.936      6.588</code></pre>
+</div>
+<div id="the-lapply-function" class="section level2">
+<h2>The <code>lapply()</code> function:</h2>
+<ul>
+<li>Applying a function to a list or vector</li>
+</ul>
+<pre class="r"><code>(x &lt;- as.list(1:5))</code></pre>
+<pre><code>## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 2
+## 
+## [[3]]
+## [1] 3
+## 
+## [[4]]
+## [1] 4
+## 
+## [[5]]
+## [1] 5</code></pre>
+<pre class="r"><code>lapply(x, FUN = sqrt)</code></pre>
+<pre><code>## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 1.414214
+## 
+## [[3]]
+## [1] 1.732051
+## 
+## [[4]]
+## [1] 2
+## 
+## [[5]]
+## [1] 2.236068</code></pre>
+<pre class="r"><code>(d &lt;- data.frame(x = 1:5, y = 6:10))</code></pre>
+<pre><code>##   x  y
+## 1 1  6
+## 2 2  7
+## 3 3  8
+## 4 4  9
+## 5 5 10</code></pre>
+<pre class="r"><code>lapply(d, FUN = sqrt)</code></pre>
+<pre><code>## $x
+## [1] 1.000000 1.414214 1.732051 2.000000 2.236068
+## 
+## $y
+## [1] 2.449490 2.645751 2.828427 3.000000 3.162278</code></pre>
+<pre class="r"><code>lapply(d, FUN = max)</code></pre>
+<pre><code>## $x
+## [1] 5
+## 
+## $y
+## [1] 10</code></pre>
+</div>
+<div id="the-sapply-function" class="section level2">
+<h2>The <code>sapply()</code> function</h2>
+<ul>
+<li>When you want to to get the output as a vector, matrix, or array instead of a list</li>
+</ul>
+<pre class="r"><code>sapply(x, FUN = sqrt)</code></pre>
+<pre><code>## [1] 1.000000 1.414214 1.732051 2.000000 2.236068</code></pre>
+<pre class="r"><code>sapply(d, FUN = sqrt)</code></pre>
+<pre><code>##             x        y
+## [1,] 1.000000 2.449490
+## [2,] 1.414214 2.645751
+## [3,] 1.732051 2.828427
+## [4,] 2.000000 3.000000
+## [5,] 2.236068 3.162278</code></pre>
+</div>
+</div>
+<div id="reading-in-external-data-files" class="section level1">
+<h1>Reading in external data files</h1>
+<div id="the-table-format" class="section level2">
+<h2>the table format</h2>
+<ul>
+<li>Typically, these files have a .txt extension (highlighting the plain-text style) or .csv (for comma-separated values).</li>
+<li>One key feature is that it usually has a header.</li>
+<li>Delimiter is a character used to seperate enteries in each line.</li>
+<li>Missing value or NA is used to denote a missing value.</li>
+</ul>
+<pre class="r"><code>(mydatafile &lt;- read.table(file = &quot;C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/8.2.1_mydatafile.txt&quot;,
+                         header = T, sep = &quot; &quot;, na.strings = &quot;*&quot;, stringsAsFactors = F))</code></pre>
+<pre><code>##   person age sex funny age.mon
+## 1  Peter  NA   M  High     504
+## 2   Lois  40   F  &lt;NA&gt;     480
+## 3    Meg  17   F   Low     204
+## 4  Chris  14   M   Med     168
+## 5 Stewie   1   M  High      NA
+## 6  Brian  NA   M   Med      NA</code></pre>
+<ul>
+<li>Another alternative way of selecting the file is using the <code>file.choose()</code> command</li>
+</ul>
+<pre class="r"><code>mydatafile &lt;- read.table(file = file.choose(), header = T, sep = &quot; &quot;, na.strings = &quot;*&quot;, stringsAsFactors = F)</code></pre>
+</div>
+<div id="spreadsheet-workbooks" class="section level2">
+<h2>Spreadsheet workbooks</h2>
+<ul>
+<li>Using the <code>read.csv()</code> function.</li>
+</ul>
+<pre class="r"><code>(dat &lt;- read.csv(file = &quot;C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/8.2.1_mydatafile.csv&quot;, header = FALSE,
+         stringsAsFactors = TRUE))</code></pre>
+<pre><code>##   V1  V2      V3
+## 1 75 161 female 
+## 2 89 185   male 
+## 3 75 185 female 
+## 4 42 132   male 
+## 5 93 170 female 
+## 6 63 185 female 
+## 7 58 132   male</code></pre>
+<ul>
+<li>Using the <code>read_excel()</code> function in the Environment window.</li>
+</ul>
+</div>
+<div id="writing-out-data-files" class="section level2">
+<h2>Writing out data files</h2>
+<ul>
+<li>The function for writing out table format files to your computer is <code>write.table()</code>.</li>
+</ul>
+<pre class="r"><code>write.table(dat, file = &quot;C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/data.csv&quot;, sep=&quot;,&quot;)</code></pre>
+</div>
+<div id="writing-out-plots-and-graphic-files" class="section level2">
+<h2>writing out plots and graphic files</h2>
+<ul>
+<li>Use <code>?png</code> for details.</li>
+</ul>
+<pre class="r"><code>png(filename = &quot;C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/p.png&quot;)
+plot(iris); dev.off()</code></pre>
+<pre><code>## png 
+##   2</code></pre>
+<pre class="r"><code>jpeg(filename = &quot;C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/p1.jpeg&quot;)
+plot(mtcars$hp); dev.off()</code></pre>
+<pre><code>## png 
+##   2</code></pre>
+<ul>
+<li>The default unit is pixels which can be changed to <em>cm</em> or <em>mm</em> as follows</li>
+</ul>
+<pre class="r"><code>jpeg(filename = &quot;C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/myplot.jpeg&quot;, height = 6, width = 6, 
+     units = &quot;cm&quot;, res = 200)
+x &lt;- 1:20; y &lt;- 21:40; plot(x,y); dev.off()</code></pre>
+<ul>
+<li>When you have finished plotting, the file deveice must be closed with a <code>dev.off()</code> call. If <code>dev.off()</code> is not called R shall continue printing all the subsequent plotting commands to the file and overwrite it.</li>
+</ul>
+</div>
+<div id="printing-in-a-pdf-format" class="section level2">
+<h2>printing in a pdf format</h2>
+<pre class="r"><code>pdf(file = &quot;C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/myplot.pdf&quot;, height = 6, width = 6)
+x &lt;- 1:20; y &lt;- 21:40; plot(x,y); dev.off()</code></pre>
+<pre><code>## png 
+##   2</code></pre>
+</div>
+</div>
+<div id="practice" class="section level1">
+<h1>Practice</h1>
+<ol style="list-style-type: decimal">
+<li>Create a vector <strong>x</strong> and assign a numerical value to it.</li>
+<li>Create another vector <strong>y</strong> and assign the numbers 1 to 5.</li>
+<li>Creater a longer vector that contains numbers 1 to 5 ten times.</li>
+<li>Assign some meaningful names to the following vectors:
+<ul>
+<li><code>c(2, 4, 6, 8, 10, 12, 14, 16, 20)</code></li>
+<li><code>0</code></li>
+<li><code>3.141593</code></li>
+<li><code>c(1, 10, 100, 1000, 10000, 100000)</code></li>
+</ul></li>
+<li>Create vectors that correspond to the following variables names:
+<ul>
+<li>BMI</li>
+<li>Age</li>
+<li>daysPerMonth</li>
+<li>firstFivePrimeNumbers</li>
+</ul></li>
+<li>Create three vectors that each contain just 1 element with variable names <code>p</code>, <code>q</code>, and <code>r</code>, and values 1, 2, and 3. Then, create a new vector that contains multiple elements, using the scalars we just created i.e., create a vector <code>u</code> of length 3, with the subsequent elements of <code>p</code>, <code>q</code> and <code>r</code>.</li>
+<li>Create a new vector u with length 96 that contains the elements of u as follows: 1, 2, 3, 1, 2, 3, …., 1, 2, 3.</li>
+<li>Suppose the surface area of a circle equals 25, what is the radius?</li>
+<li>What is the probability density at <em>x=0</em> of a normally distributed random variable <em>x</em> with mean (mu) equal to zero, and standard devation (sigma) equal to one?</li>
+<li>Sort the numbers 10,50,12,63,74,1,89,5,3,6,4 in ascending order.</li>
+<li>Generate a sequence of 100 numbers between -60 to 45 with a width of 5, and find the mean value.</li>
+<li>Use the functions <code>mean()</code> and <code>range()</code> to find the mean and range of:
+<ul>
+<li>the numbers 1, 2, . . . , 21</li>
+<li>the sample of 50 random normal values, that can be generated from a normaL distribution with mean 0 and variance 1 using the assignment <code>y &lt;- rnorm(50)</code>.</li>
+<li>the columns <strong>height</strong> and <strong>weight</strong> in the data frame <strong>women</strong>. [The datasets package that has this data frame is by default attached when R is started.]</li>
+</ul></li>
+<li>What are the respective effects of the arguments <code>sep</code> and <code>collapse</code> in the <code>paste()</code> function?</li>
+<li>Create a matrix as depicted in the following table. The row names are the roll numbers of the students in economics class, and the column names are the codes of the courses. The values represent the marks obtained out of 50, and are random. You can assume and assign marks.</li>
+</ol>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:250px; ">
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Subject
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+ECON0101
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+ECON0102
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+ECON0201
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+ECON0791
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ECON01
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+24
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON02
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON03
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:right;">
+49
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON04
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:right;">
+41
+</td>
+<td style="text-align:right;">
+46
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON05
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON06
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+27
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON07
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+39
+</td>
+<td style="text-align:right;">
+28
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON08
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+24
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON09
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+50
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON10
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+46
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON11
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+36
+</td>
+<td style="text-align:right;">
+29
+</td>
+<td style="text-align:right;">
+25
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON12
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+26
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON13
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+50
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON14
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:right;">
+45
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON15
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+49
+</td>
+<td style="text-align:right;">
+47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON16
+</td>
+<td style="text-align:right;">
+36
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+28
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON17
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+29
+</td>
+<td style="text-align:right;">
+36
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON18
+</td>
+<td style="text-align:right;">
+36
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:right;">
+31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON19
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+49
+</td>
+<td style="text-align:right;">
+47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON20
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+24
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON21
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON22
+</td>
+<td style="text-align:right;">
+39
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON23
+</td>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+46
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON24
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON25
+</td>
+<td style="text-align:right;">
+29
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON26
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+46
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON27
+</td>
+<td style="text-align:right;">
+46
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+44
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON28
+</td>
+<td style="text-align:right;">
+49
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+49
+</td>
+<td style="text-align:right;">
+41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON29
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+27
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON30
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+46
+</td>
+<td style="text-align:right;">
+37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON31
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON32
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+45
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON33
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+21
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON34
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON35
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON36
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON37
+</td>
+<td style="text-align:right;">
+36
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+36
+</td>
+<td style="text-align:right;">
+50
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON38
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+24
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON39
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON40
+</td>
+<td style="text-align:right;">
+41
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:right;">
+33
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol start="15" style="list-style-type: decimal">
+<li>Calculate the mean marks obtained by each student in Q14 and find out which students got the top and last 3 positions (hint: you can sort the data).</li>
+<li>What date and time shall your friend in Massachusetts Institute of Technology (MIT) be speaking with you online if you call him/her now?</li>
+<li>Create a 4X3 matrix with numbers between -30 and 30 (excluding 0). Extract the first and second elements from the fourth row. Extract the second and third elements from the second row. Replace all the negative elements in the matrix with 0.</li>
+<li>Extract all clips starting with either <code>http</code> or <code>https</code> from this vector</li>
+</ol>
+<pre class="r"><code>(c(&quot;www.dogman.com&quot;, &quot;http://rotterdam.com&quot;, &quot;https://facebook.com&quot;, &quot;httpx://sims.com&quot;))</code></pre>
+<ol start="19" style="list-style-type: decimal">
+<li>Extract the street address from: <strong>Presidency University, 86/1, College Street, Kolkata - 700073.</strong></li>
+<li>Remove all the non-alphabetical characters from the following paragraph and add your name at the end;</li>
+</ol>
+<blockquote>
+<p>I think, sometimes, that my use of commas, and, occasionally, exclamation marks, can be excessive. Whenever I add a word or expression, not necessary, to the sentence, just like I did with the “not necessary” and like am doing right now, I always include these words, well maybe not always, usually include these inserts between commas; so, basically, I enjoy writing long sentences, joined with lots of commas and, frequently, semi-colons and, often, colons (and have been rather prone to using brackets, as well).</p>
+</blockquote>
+<p>I am posting the solution to this question as you shall require another package called <code>mgsub</code>. Do let me know if you have any queries.</p>
+<pre class="r"><code>## install.packages(&quot;mgsub&quot;)
+library(mgsub)
+k &lt;- &#39;I think, sometimes, that my use of commas, and, occasionally, exclamation marks, can be excessive. Whenever I add a word or expression, not necessary, to the sentence, just like I did with the &quot;not necessary&quot; and like am doing right now, I always include these words, well maybe not always, usually include these inserts between commas; so, basically, I enjoy writing long sentences, joined with lots of commas and, frequently, semi-colons and, often, colons (and have been rather prone to using brackets, as well).&#39;
+
+p &lt;- mgsub(pattern = c(&quot;\\,&quot;, &quot;\\(&quot;, &quot;\&quot;&quot;, &quot;\\.&quot;, &quot;\\)&quot;, &quot;\\;&quot;), replacement = rep(&quot;&quot;, times = 6), k)
+paste(p, &quot;My Name&quot;, sep = &quot; --- &quot;)</code></pre>
+<pre><code>## [1] &quot;I think sometimes that my use of commas and occasionally exclamation marks can be excessive Whenever I add a word or expression not necessary to the sentence just like I did with the not necessary and like am doing right now I always include these words well maybe not always usually include these inserts between commas so basically I enjoy writing long sentences joined with lots of commas and frequently semi-colons and often colons and have been rather prone to using brackets as well --- My Name&quot;</code></pre>
+<ol start="21" style="list-style-type: decimal">
+<li>Create an ordered vector as represented in the following table, and replicate the output table:
+<table class="table table-striped" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:right;">
+Slow
+</th>
+<th style="text-align:right;">
+Fast
+</th>
+<th style="text-align:right;">
+Insane
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+</tbody>
+</table></li>
+<li><ol style="list-style-type: lower-alpha">
+<li>Construct and store a 4 x 2 matrix that’s filled row-wise with the values 4.3, 3.1, 8.2, 8.2, 3.2, 0.9, 1.6, and 6.5, in that order.</li>
+<li>Confirm the dimensions of the matrix from (a) are 3 x 2 if you remove any one row.</li>
+<li>Overwrite the second column of the matrix from (a) with that same column sorted from smallest to largest.</li>
+<li>What does R return if you delete the fourth row and the first column from (c)? Use matrix to ensure the result is a single-column matrix, rather than a vector.</li>
+<li>Store the bottom four elements of (c) as a new 2 x 2 matrix.</li>
+<li>Overwrite, in this order, the elements of (c) at positions (4;2), (1;2), (4;1), and (1;1) with <span class="math inline">\(-\frac{1}{2}\)</span> of the two values on the diagonal of (e).</li>
+</ol></li>
+<li><ol style="list-style-type: lower-alpha">
+<li>Calculate the following:
+<span class="math display">\[\frac{2}{7}\left( 
+\begin{bmatrix}
+1 &amp; 2 \\
+2 &amp; 4\\
+7 &amp; 6 \\ 
+\end{bmatrix} - \begin{bmatrix}
+10 &amp; 20 \\
+30 &amp; 40\\
+50 &amp; 60 \\ 
+\end{bmatrix}\right)\]</span></li>
+<li>Store these two matrices:
+<span class="math display">\[ A = \begin{bmatrix}
+1\\2\\7
+\end{bmatrix}  B = \begin{bmatrix}
+3\\4\\8
+\end{bmatrix} 
+\]</span>
+Which of the following multiplications are possible?
+<ol style="list-style-type: lower-roman">
+<li><span class="math inline">\(A.B\)</span></li>
+<li><span class="math inline">\(A^\intercal.B\)</span></li>
+<li><span class="math inline">\(B^\intercal.\left(A.A^\intercal \right)\)</span></li>
+<li><span class="math inline">\(\left(A.A^\intercal \right). B^\intercal\)</span></li>
+<li><span class="math inline">\(\left[\left(B.B^\intercal \right) + \left(A.A^\intercal \right) - 100I_{3} \right]^{-1}\)</span></li>
+</ol></li>
+</ol></li>
+<li><ol style="list-style-type: lower-alpha">
+<li><p>Store the vector <code>c(7,1,7,10,5,9,10,3,10,8)</code> as <code>nums</code>. Print the elements greater than 5 OR equal to 2.</p></li>
+<li><p>Store the vector <code>c(8,8,4,4,5,1,5,6,6,8)</code> and print the elements less than or equal to 6 AND not equal to 4.</p></li>
+</ol></li>
+<li>Re-create exactly the following output:</li>
+</ol>
+<pre><code>## The quick brown fox
+##   jumped over
+##       the lazy dogs</code></pre>
+<ol start="26" style="list-style-type: decimal">
+<li>Suppose you’ve stored the values <code>num1 &lt;- 4</code> and <code>num2 &lt;- 0.75</code>. Write a line of R code that returns the following string:</li>
+</ol>
+<pre><code>## [1] &quot;The result of multiplying 4 by 0.75 is 3&quot;</code></pre>
+<ol start="27" style="list-style-type: decimal">
+<li>On my local machine, the directory for my work on this book is specified in R as <strong>“/Users/ptamang/Documents/RBook/”</strong>. Imagine it is your machine - write a line of code that replaces <strong>ptamang</strong> in this string with your first initial and surname.</li>
+<li>Store the following string <strong>“How much wood could a woodchuck chuck”</strong> and glue it to <strong>“if a woodchuck could chuck wood.”</strong> Next replace all instances of <strong>wood</strong> with <strong>metal</strong> in the resulting string.</li>
+<li>The Indian government consists of the political parties <strong>BJP</strong>, <strong>INC</strong>, <strong>CPI</strong>, <strong>TMC</strong> and other parties grouped under <strong>Others</strong> category. Suppose you asked 20 Indians which of these they identified most with and obtained the following data:
+<ul>
+<li>There were 12 males and 8 females; the individuals nnumbered 1, 5-7, 12, and 14-16 were females.</li>
+<li>The individuals numbered 1,4,12,15,16 and 19 identified with BJP; no one identified with CPI, the individuals numbered 6,9 and 11 identified with INC, 10 and 20 identified with Others, and the rest with TMC.</li>
+</ul>
+<ol style="list-style-type: lower-alpha">
+<li>Use your knowledge of vectors (for example, subsetting and overwriting) to create two character vectors: <strong>sex</strong> with entries “M” (male) and “F” (female) and <strong>party</strong> with entries “BJP”, “INC”, “CPI”, “TMC”, and “Others”. Make sure the entries are placed in the correct positions as outlined earlier.</li>
+</ol></li>
+</ol>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><p>Create two different factor vectors based on <strong>sex</strong> and <strong>party</strong>. Does it make any sense to use <code>ordered=TRUE</code> in either case? How has R appeared to arrange the levels?</p></li>
+<li><p>Use factor subsetting to do the following:</p>
+<ol style="list-style-type: lower-roman">
+<li>Return the factor vector of chosen parties for only the male participants.</li>
+<li>Return the factor vector of genders for those who chose BJP.</li>
+</ol></li>
+<li><p>Another six people joined the survey, with the results <strong>c(“BJP”,“INC”,“INC”,“CPM”,“TMC”,“BJP”)</strong> for the preferred party and <strong>c(“M”,“M”,“F”,“F”,“F”,“M”)</strong> as their gender. Combine these results with the original factors from (b).</p></li>
+</ol>
+<p>Suppose you also asked all individuals to state how confident they were that BJP will win more seats in West Bengal than TMC in the next election and to attach a subjective percentage to that confidence. The following 26 results were obtained: 93, 55, 29, 100, 52, 84, 56, 0, 33, 52, 35, 53, 55, 46, 40, 40, 56, 45, 64, 31, 10, 29, 40, 95, 18, 61.
+e. Create a factor with levels of confidence as follows: Low for percentages [0,30]; Moderate for percentages (30,70]; and High for percentages (70,100].</p>
+<ol start="6" style="list-style-type: lower-alpha">
+<li>From (e), extract the levels corresponding to those individuals who originally said they identified with BJP. Do this also for TMC. What do you notice?</li>
+</ol>
+<ol start="30" style="list-style-type: decimal">
+<li><ol style="list-style-type: lower-alpha">
+<li>Create a list that contains, in this order, a sequence of 20 evenly spaced numbers between -4 and 4; a 3 x 3 matrix of the logical vector c(F,T,T,T,F,T,T,F,F) filled column-wise; a character vector with the two strings “don” and “quixote”; and a factor vector containing the observations c(“LOW”,“MED”,“LOW”,“MED”,“MED”,“HIGH”). Then, do the following:
+<ol style="list-style-type: lower-roman">
+<li>Extract row elements 2 and 1 of columns 2 and 3, in that order, of the logical matrix.</li>
+<li>Obtain all values from the sequence between -4 and 4 that are greater than 1.</li>
+<li>Using <code>which()</code> determine which indices in the factor vector are assigned the “MED” level.</li>
+</ol></li>
+</ol></li>
+<li><ol style="list-style-type: lower-alpha">
+<li>Create and store this data frame as <strong>dframe</strong> in your R workspace:
+<table class="table table-striped table-hover" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+person
+</th>
+<th style="text-align:left;">
+gender
+</th>
+<th style="text-align:left;">
+funny
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Bumrah
+</td>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:left;">
+High
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kom
+</td>
+<td style="text-align:left;">
+F
+</td>
+<td style="text-align:left;">
+Med
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phogat
+</td>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:left;">
+Low
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bhutia
+</td>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:left;">
+High
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sindhu
+</td>
+<td style="text-align:left;">
+F
+</td>
+<td style="text-align:left;">
+Med
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Khan
+</td>
+<td style="text-align:left;">
+F
+</td>
+<td style="text-align:left;">
+Med
+</td>
+</tr>
+</tbody>
+</table>
+The variables <strong>person</strong>, <strong>gender</strong>, and <strong>funny</strong> should be of character, factor (with levels <strong>F</strong> and <strong>M</strong>), and factor (with levels <strong>Low</strong>, <strong>Med</strong>, and <strong>High</strong>) respectively.
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Create another dataframe contatining information on 4 more people. Append this data frame to the one you created in (a).</li>
+<li>Add a new column (name it <strong>age</strong>) containing information on age to the appended data frame in (b).</li>
+<li>Reorder the column variables of the data frame in (c) such that the <strong>age</strong> column is after the <strong>gender</strong> column.</li>
+<li>Use your knowledge of handling character strings and write a single line of code that will extract from the reordered data frame in (d), all the records of persons whose name starts with <strong>B</strong>. For example if you were to do the same with <strong>dframe</strong>, the oputput shoud look exactly as given below:
+<table class="table table-striped table-hover" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+person
+</th>
+<th style="text-align:left;">
+gender
+</th>
+<th style="text-align:left;">
+funny
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+Bumrah
+</td>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:left;">
+High
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+Bhutia
+</td>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:left;">
+High
+</td>
+</tr>
+</tbody>
+</table></li>
+</ol></li>
+</ol></li>
+<li><p>Store the following matrix
+<span class="math display">\[\begin{bmatrix}
+34 &amp; 0 &amp; 1\\
+23 &amp; 1 &amp;2 \\
+33 &amp; 1&amp; 1\\
+42 &amp; 0 &amp; 1 \\
+41 &amp; 0 &amp; 2
+\end{bmatrix}\]</span>
+Then do the following:</p>
+<ol style="list-style-type: lower-roman">
+<li>Coerce the matrix to a data frame.</li>
+<li>As a data frame, coerce the second column to be logical valued.</li>
+<li>As as data frame, coerce the third column to be factor valued.</li>
+</ol></li>
+<li><p>Use the code given below to download the United States real GDP rates from 1929.
+<code>t &lt;- htmltab("https://www.thebalance.com/us-gdp-by-year-3305543", 1)</code> The table is stored in <code>t</code>. you can check the class of <code>t</code> and confirm that its a data frame. You can additionally visit the website to know more about the data structure.</p>
+<ol style="list-style-type: lower-roman">
+<li>Install <code>htmltab</code> package and load it in the current session.</li>
+<li>All you need to do is to find the average the real gdp growth during 1950 - 1964.</li>
+<li>You can plot the growth rates since the period 1929.</li>
+</ol></li>
+<li><p>As closely as you can, recreate the following plot:
+<img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-172-1.png" width="672" /></p></li>
+<li><p>Use the <code>quakes</code> data set and the <code>mag</code> column to create the following boxplot: Use <code>?quakes</code> to read the description of the data set. You can use the <code>shape</code> package if you want to.
+<img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-173-1.png" width="672" /></p></li>
+<li><p>Us the built-in <code>InsectSprays</code> data frame, containing counts of insects on various agricultural units treated with one of six sprays:</p>
+<ol style="list-style-type: lower-roman">
+<li>Produce a histogram of the counts of insects using base R graphics.</li>
+<li>Obtain the total number of insects found according to each spray. Then produce a vertical barplot and pie chart of these totals, labeling each plot appropriately.</li>
+<li>Generate side-by-side boxplots of the counts of insects according to each spray type and include appropriate axis labels and a title.</li>
+</ol></li>
+<li><p>Yet another of R’s useful ready-to-use data sets is <code>USArrests</code>, containing data on the number of arrests for murder, rape, and assault per 100,000 individuals in each of the 50 states of the United States, recorded in 1973 (see, for example, McNeil, 1977). It also includes a variable giving the percentage of urban-based population in each state. Briefly inspect the data frame object and the accompanying documentation <code>?USArrests</code>. Then complete the following:</p>
+<ol style="list-style-type: lower-roman">
+<li>Generate a histogram of the proportion of urban population for the states. Set your breaks to be 10 units each, between 0 and 100. Have the histogram show the first quartile, the median, and the third quartile; then provide a matching legend. Use colors as you like and include appropriate axis annotation.</li>
+<li>The code <code>t(as.matrix(USArrests[,-3]))</code> creates a matrix of the <code>USArrests</code> data without the urban population column, and the built-in R object <code>state.abb</code> provides the two-letter state abbreviations, in alphabetical order, as a character vector. Use these two structures and base R graphics to produce a horizontal, stacked barplot with the horizontal bars labeled with state abbreviations and with each bar split according to the type of crime (murder,
+rape, and assault). Include a legend.</li>
+<li>Define a new factor vector <code>urbancat</code> that is set to 1 if the corresponding state has an urban population percentage greater than the median percentage and is set to 0 otherwise.</li>
+<li>Create a new copy of <code>USArrests</code> in your workspace, after deleting the <code>UrbanPop</code> column, leaving just the three crime rate variables. Then insert a new, fourth column in this object with <code>urbancat</code>.</li>
+<li>Use the data frame from (iv) to produce a scatterplot matrix and other associated plots of the three crime rates against one another. Use <code>color</code> to split the crime rates according to the two levels of <code>urbancat</code>.</li>
+</ol></li>
+<li><p>Install the package <code>titanic</code>. Read the description of the dataset by <code>?titanic</code>.</p>
+<ol style="list-style-type: lower-roman">
+<li>Load the <code>titanic_test</code> and <code>titanic_train</code> datasets from the package.</li>
+<li>Upon careful inspection you will find that the <code>titanic_test</code> dataset is a continuation of the <code>titanic_train</code> dataset. However, one column in <code>titanic_test</code> is missing. Identify the missing column and add the column to the <code>titanic_test</code> dataset with hypothetical column values similar to the one in the <code>titanic_train</code> dataset.</li>
+<li>After completing i. and ii. combine the datasets into a single one and name it. Check the dimensions of the resulting dataset to confirm that you have all the data.</li>
+<li>How many males did survie in iii? What was their most common age?</li>
+<li>What kind of relationship can you infer between <code>Age</code> and <code>Class</code> in iii? (Use a box-plot.)</li>
+<li>How is the fare distribution skewed in iii? Positive or negative?</li>
+<li>Is there a correlation between fare and survival in iii?</li>
+</ol></li>
+</ol>
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;">
+
+</div>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+
