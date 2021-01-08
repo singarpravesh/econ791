@@ -118,7 +118,7 @@ Other software like STATA may cost on an average of $1000 annual license fee.</l
 </div>
 <div id="getting-help" class="section level1">
 <h1>Getting help</h1>
-<p>To get a help on a specific function say “solve”, the command is</p>
+<p>To get a help on a specific function say “mean”, the command is</p>
 <pre class="r"><code>help(mean)
 # or
 ?mean()
@@ -620,7 +620,7 @@ b</code></pre>
 <h1>Working with date and time</h1>
 <p>The <code>date()</code> function returns a character string of current date and time.</p>
 <pre class="r"><code>date()</code></pre>
-<pre><code>## [1] &quot;Fri Jan 08 09:19:38 2021&quot;</code></pre>
+<pre><code>## [1] &quot;Fri Jan 08 10:13:26 2021&quot;</code></pre>
 <pre class="r"><code>class(date())</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p>The <code>Sys.Date()</code> rerturns the current day in the current time zone.</p>
@@ -630,7 +630,7 @@ b</code></pre>
 <pre><code>## [1] &quot;Date&quot;</code></pre>
 <p><code>Sys.time()</code> returns returns the absolute date-time value.</p>
 <pre class="r"><code>Sys.time()</code></pre>
-<pre><code>## [1] &quot;2021-01-08 09:19:38 IST&quot;</code></pre>
+<pre><code>## [1] &quot;2021-01-08 10:13:26 IST&quot;</code></pre>
 <div id="formatting-dates" class="section level3">
 <h3>Formatting dates</h3>
 <p>The follwoing codes are required while formating dates.</p>
@@ -695,9 +695,9 @@ d1; class(d1)</code></pre>
 <pre><code>## [1] &quot;Date&quot;</code></pre>
 <pre class="r"><code>d2 &lt;- Sys.time()
 d2</code></pre>
-<pre><code>## [1] &quot;2021-01-08 09:19:38 IST&quot;</code></pre>
+<pre><code>## [1] &quot;2021-01-08 10:13:26 IST&quot;</code></pre>
 <pre class="r"><code>format(d2, &quot;%d-%B-%Y %H:%M:%S %Y&quot;)</code></pre>
-<pre><code>## [1] &quot;08-January-2021 09:19:38 2021&quot;</code></pre>
+<pre><code>## [1] &quot;08-January-2021 10:13:26 2021&quot;</code></pre>
 <p>There are basically two major data types related to time</p>
 <ol style="list-style-type: decimal">
 <li><strong>POSIXct:</strong> <strong>(Portable Operating System Interface)</strong> <em>ct</em> stands for calander time. It is the number of seconds since 1-Jan-1970. Negative numbers represent the number of seconds before this time.</li>
@@ -705,17 +705,17 @@ d2</code></pre>
 </ol>
 <pre class="r"><code># current time as POSIXct
 unclass(Sys.time()) # What does unclass do?</code></pre>
-<pre><code>## [1] 1610077779</code></pre>
+<pre><code>## [1] 1610081007</code></pre>
 <pre class="r"><code># as POSIXlt
 unclass(as.POSIXlt(Sys.time()))</code></pre>
 <pre><code>## $sec
-## [1] 38.64079
+## [1] 26.70752
 ## 
 ## $min
-## [1] 19
+## [1] 13
 ## 
 ## $hour
-## [1] 9
+## [1] 10
 ## 
 ## $mday
 ## [1] 8
@@ -2145,140 +2145,21 @@ ECON0791
 ECON01
 </td>
 <td style="text-align:right;">
-45
+27
 </td>
 <td style="text-align:right;">
-48
+39
 </td>
 <td style="text-align:right;">
-20
+46
 </td>
 <td style="text-align:right;">
-38
+27
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 ECON02
-</td>
-<td style="text-align:right;">
-33
-</td>
-<td style="text-align:right;">
-37
-</td>
-<td style="text-align:right;">
-25
-</td>
-<td style="text-align:right;">
-20
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON03
-</td>
-<td style="text-align:right;">
-40
-</td>
-<td style="text-align:right;">
-47
-</td>
-<td style="text-align:right;">
-32
-</td>
-<td style="text-align:right;">
-30
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON04
-</td>
-<td style="text-align:right;">
-49
-</td>
-<td style="text-align:right;">
-26
-</td>
-<td style="text-align:right;">
-33
-</td>
-<td style="text-align:right;">
-27
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON05
-</td>
-<td style="text-align:right;">
-37
-</td>
-<td style="text-align:right;">
-47
-</td>
-<td style="text-align:right;">
-49
-</td>
-<td style="text-align:right;">
-47
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON06
-</td>
-<td style="text-align:right;">
-31
-</td>
-<td style="text-align:right;">
-27
-</td>
-<td style="text-align:right;">
-36
-</td>
-<td style="text-align:right;">
-40
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON07
-</td>
-<td style="text-align:right;">
-41
-</td>
-<td style="text-align:right;">
-31
-</td>
-<td style="text-align:right;">
-42
-</td>
-<td style="text-align:right;">
-47
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON08
-</td>
-<td style="text-align:right;">
-38
-</td>
-<td style="text-align:right;">
-20
-</td>
-<td style="text-align:right;">
-32
-</td>
-<td style="text-align:right;">
-25
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON09
 </td>
 <td style="text-align:right;">
 22
@@ -2287,10 +2168,129 @@ ECON09
 23
 </td>
 <td style="text-align:right;">
-49
+46
+</td>
+<td style="text-align:right;">
+43
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON03
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON04
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON05
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+48
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON06
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+29
+</td>
+<td style="text-align:right;">
+46
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON07
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:right;">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON08
+</td>
+<td style="text-align:right;">
+42
 </td>
 <td style="text-align:right;">
 50
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+39
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON09
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+36
 </td>
 </tr>
 <tr>
@@ -2298,16 +2298,16 @@ ECON09
 ECON10
 </td>
 <td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
 32
 </td>
 <td style="text-align:right;">
-45
+44
 </td>
 <td style="text-align:right;">
-47
-</td>
-<td style="text-align:right;">
-38
+32
 </td>
 </tr>
 <tr>
@@ -2315,98 +2315,13 @@ ECON10
 ECON11
 </td>
 <td style="text-align:right;">
-28
-</td>
-<td style="text-align:right;">
 46
 </td>
 <td style="text-align:right;">
-28
-</td>
-<td style="text-align:right;">
-34
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON12
+21
 </td>
 <td style="text-align:right;">
 37
-</td>
-<td style="text-align:right;">
-46
-</td>
-<td style="text-align:right;">
-45
-</td>
-<td style="text-align:right;">
-29
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON13
-</td>
-<td style="text-align:right;">
-45
-</td>
-<td style="text-align:right;">
-44
-</td>
-<td style="text-align:right;">
-50
-</td>
-<td style="text-align:right;">
-41
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON14
-</td>
-<td style="text-align:right;">
-27
-</td>
-<td style="text-align:right;">
-35
-</td>
-<td style="text-align:right;">
-42
-</td>
-<td style="text-align:right;">
-47
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON15
-</td>
-<td style="text-align:right;">
-32
-</td>
-<td style="text-align:right;">
-27
-</td>
-<td style="text-align:right;">
-23
-</td>
-<td style="text-align:right;">
-40
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON16
-</td>
-<td style="text-align:right;">
-45
-</td>
-<td style="text-align:right;">
-48
-</td>
-<td style="text-align:right;">
-20
 </td>
 <td style="text-align:right;">
 30
@@ -2414,19 +2329,104 @@ ECON16
 </tr>
 <tr>
 <td style="text-align:left;">
-ECON17
+ECON12
 </td>
 <td style="text-align:right;">
-44
+49
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+41
+</td>
+<td style="text-align:right;">
+32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON13
+</td>
+<td style="text-align:right;">
+43
 </td>
 <td style="text-align:right;">
 48
 </td>
 <td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON14
+</td>
+<td style="text-align:right;">
 21
 </td>
 <td style="text-align:right;">
-40
+31
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:right;">
+42
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON15
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON16
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+29
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON17
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+29
 </td>
 </tr>
 <tr>
@@ -2434,16 +2434,16 @@ ECON17
 ECON18
 </td>
 <td style="text-align:right;">
-42
+20
+</td>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:right;">
+49
 </td>
 <td style="text-align:right;">
 29
-</td>
-<td style="text-align:right;">
-44
-</td>
-<td style="text-align:right;">
-46
 </td>
 </tr>
 <tr>
@@ -2454,13 +2454,13 @@ ECON19
 22
 </td>
 <td style="text-align:right;">
-34
+22
+</td>
+<td style="text-align:right;">
+38
 </td>
 <td style="text-align:right;">
 39
-</td>
-<td style="text-align:right;">
-35
 </td>
 </tr>
 <tr>
@@ -2468,16 +2468,16 @@ ECON19
 ECON20
 </td>
 <td style="text-align:right;">
-37
+43
 </td>
 <td style="text-align:right;">
-22
+26
 </td>
 <td style="text-align:right;">
-41
+30
 </td>
 <td style="text-align:right;">
-39
+40
 </td>
 </tr>
 <tr>
@@ -2485,16 +2485,16 @@ ECON20
 ECON21
 </td>
 <td style="text-align:right;">
-26
+42
 </td>
 <td style="text-align:right;">
-24
+49
 </td>
 <td style="text-align:right;">
-33
+44
 </td>
 <td style="text-align:right;">
-35
+45
 </td>
 </tr>
 <tr>
@@ -2502,16 +2502,16 @@ ECON21
 ECON22
 </td>
 <td style="text-align:right;">
-22
+43
 </td>
 <td style="text-align:right;">
-39
+43
 </td>
 <td style="text-align:right;">
-28
+36
 </td>
 <td style="text-align:right;">
-31
+50
 </td>
 </tr>
 <tr>
@@ -2522,13 +2522,13 @@ ECON23
 38
 </td>
 <td style="text-align:right;">
-33
+32
 </td>
 <td style="text-align:right;">
-37
+35
 </td>
 <td style="text-align:right;">
-30
+49
 </td>
 </tr>
 <tr>
@@ -2536,16 +2536,16 @@ ECON23
 ECON24
 </td>
 <td style="text-align:right;">
-49
+33
 </td>
 <td style="text-align:right;">
-24
+20
 </td>
 <td style="text-align:right;">
-25
+50
 </td>
 <td style="text-align:right;">
-43
+27
 </td>
 </tr>
 <tr>
@@ -2553,16 +2553,16 @@ ECON24
 ECON25
 </td>
 <td style="text-align:right;">
-37
+40
 </td>
 <td style="text-align:right;">
-41
+22
 </td>
 <td style="text-align:right;">
-42
+33
 </td>
 <td style="text-align:right;">
-21
+30
 </td>
 </tr>
 <tr>
@@ -2570,16 +2570,16 @@ ECON25
 ECON26
 </td>
 <td style="text-align:right;">
-30
+39
 </td>
 <td style="text-align:right;">
-24
+37
 </td>
 <td style="text-align:right;">
-41
+36
 </td>
 <td style="text-align:right;">
-20
+36
 </td>
 </tr>
 <tr>
@@ -2587,16 +2587,16 @@ ECON26
 ECON27
 </td>
 <td style="text-align:right;">
-26
-</td>
-<td style="text-align:right;">
-34
-</td>
-<td style="text-align:right;">
-34
+39
 </td>
 <td style="text-align:right;">
 24
+</td>
+<td style="text-align:right;">
+49
+</td>
+<td style="text-align:right;">
+38
 </td>
 </tr>
 <tr>
@@ -2604,16 +2604,16 @@ ECON27
 ECON28
 </td>
 <td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:right;">
 20
-</td>
-<td style="text-align:right;">
-48
-</td>
-<td style="text-align:right;">
-20
-</td>
-<td style="text-align:right;">
-40
 </td>
 </tr>
 <tr>
@@ -2621,16 +2621,16 @@ ECON28
 ECON29
 </td>
 <td style="text-align:right;">
-34
+42
 </td>
 <td style="text-align:right;">
-24
-</td>
-<td style="text-align:right;">
-32
+36
 </td>
 <td style="text-align:right;">
 34
+</td>
+<td style="text-align:right;">
+30
 </td>
 </tr>
 <tr>
@@ -2638,16 +2638,16 @@ ECON29
 ECON30
 </td>
 <td style="text-align:right;">
-38
+33
 </td>
 <td style="text-align:right;">
-27
+36
 </td>
 <td style="text-align:right;">
-25
+36
 </td>
 <td style="text-align:right;">
-39
+30
 </td>
 </tr>
 <tr>
@@ -2655,16 +2655,16 @@ ECON30
 ECON31
 </td>
 <td style="text-align:right;">
-38
-</td>
-<td style="text-align:right;">
-22
+26
 </td>
 <td style="text-align:right;">
 42
 </td>
 <td style="text-align:right;">
-37
+49
+</td>
+<td style="text-align:right;">
+22
 </td>
 </tr>
 <tr>
@@ -2672,16 +2672,16 @@ ECON31
 ECON32
 </td>
 <td style="text-align:right;">
-48
-</td>
-<td style="text-align:right;">
-30
-</td>
-<td style="text-align:right;">
 41
 </td>
 <td style="text-align:right;">
-28
+20
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+20
 </td>
 </tr>
 <tr>
@@ -2689,16 +2689,16 @@ ECON32
 ECON33
 </td>
 <td style="text-align:right;">
-21
+43
 </td>
 <td style="text-align:right;">
-30
+37
+</td>
+<td style="text-align:right;">
+35
 </td>
 <td style="text-align:right;">
 50
-</td>
-<td style="text-align:right;">
-21
 </td>
 </tr>
 <tr>
@@ -2706,47 +2706,13 @@ ECON33
 ECON34
 </td>
 <td style="text-align:right;">
-38
+22
 </td>
 <td style="text-align:right;">
-41
+46
 </td>
 <td style="text-align:right;">
 24
-</td>
-<td style="text-align:right;">
-35
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON35
-</td>
-<td style="text-align:right;">
-35
-</td>
-<td style="text-align:right;">
-49
-</td>
-<td style="text-align:right;">
-26
-</td>
-<td style="text-align:right;">
-50
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON36
-</td>
-<td style="text-align:right;">
-33
-</td>
-<td style="text-align:right;">
-25
-</td>
-<td style="text-align:right;">
-27
 </td>
 <td style="text-align:right;">
 37
@@ -2754,19 +2720,53 @@ ECON36
 </tr>
 <tr>
 <td style="text-align:left;">
-ECON37
-</td>
-<td style="text-align:right;">
-20
-</td>
-<td style="text-align:right;">
-31
+ECON35
 </td>
 <td style="text-align:right;">
 23
 </td>
 <td style="text-align:right;">
-40
+35
+</td>
+<td style="text-align:right;">
+39
+</td>
+<td style="text-align:right;">
+36
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON36
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+46
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+26
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON37
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+50
 </td>
 </tr>
 <tr>
@@ -2774,16 +2774,16 @@ ECON37
 ECON38
 </td>
 <td style="text-align:right;">
-27
+43
 </td>
 <td style="text-align:right;">
-49
+37
 </td>
 <td style="text-align:right;">
-41
+40
 </td>
 <td style="text-align:right;">
-48
+36
 </td>
 </tr>
 <tr>
@@ -2791,16 +2791,16 @@ ECON38
 ECON39
 </td>
 <td style="text-align:right;">
-41
+24
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+45
 </td>
 <td style="text-align:right;">
 33
-</td>
-<td style="text-align:right;">
-21
-</td>
-<td style="text-align:right;">
-43
 </td>
 </tr>
 <tr>
@@ -2808,16 +2808,16 @@ ECON39
 ECON40
 </td>
 <td style="text-align:right;">
-28
+49
 </td>
 <td style="text-align:right;">
-42
+36
 </td>
 <td style="text-align:right;">
-33
+44
 </td>
 <td style="text-align:right;">
-43
+35
 </td>
 </tr>
 </tbody>

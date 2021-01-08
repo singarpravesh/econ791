@@ -89,7 +89,7 @@ The R console is a tool that allows you to type commands into R and see how the 
 
 
 # Getting help
-To get a help on a specific function say "solve", the command is
+To get a help on a specific function say "mean", the command is
 ```{r, eval=FALSE}
 help(mean)
 # or
