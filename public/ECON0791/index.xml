@@ -21,9 +21,18 @@
     </item>
     
     <item>
+      <title>2. Introductory Econometrics with Excel</title>
+      <link>/econ0791/2-introductory-econometrics-with-excel/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/econ0791/2-introductory-econometrics-with-excel/</guid>
+      <description>Downloads:Data: caschool.xlsx; Growth.xlsxData Description: californiatestscores.docx; Growth_Description.pdf</description>
+    </item>
+    
+    <item>
       <title>3. Basics of R</title>
       <link>/econ0791/3-basics-of-r/</link>
-      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>/econ0791/3-basics-of-r/</guid>
       <description>SyllabusIntroductionInstalling R and RStudio: R Versions, Download and install R, Installing Packages, Loading Packages, Updating R and its Packages.User Interface, Packages and Help: The R Console, RStudio, Getting Help.R Packages: Listing Packages in Local Libraries, Loading Packages, Package Repositories, Finding and Installing Packages Inside R and other Repositories,The R LanguageOverview: Expressions, Objects, Symbols, Functions, Special Values.R Objects: Vectors, Integers, Character, Logicals, Complex and Raw, Attributes of Objects, Matrices, Arrays, Class, Dates and Time, Factors, Coercion, Lists, Data Frames, Changing values, Logical Subsetting, Boolean Operators, Missing Information and removing NAs.</description>

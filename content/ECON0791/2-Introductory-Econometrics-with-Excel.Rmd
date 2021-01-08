@@ -1,0 +1,15 @@
+---
+title: "2. Introductory Econometrics with Excel"
+author: "pravesh"
+date: "2021-01-05"
+output: html_document
+---
+
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<object width="100%" height="500" data="Regression.pdf"></object>
+</html>
+
+- Downloads:
+  - Data: [caschool.xlsx](caschool.xlsx); [Growth.xlsx](Growth.xlsx)
+  - Data Description: [californiatestscores.docx](californiatestscores.docx); [Growth_Description.pdf](Growth_Description.pdf)
