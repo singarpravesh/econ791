@@ -53,15 +53,14 @@ Other software like STATA may cost on an average of $1000 annual license fee.
 - The other packages can be downloaded and installed as per user requirements; for eg.`AER` package is required for econometrics.
 
 # The R console
-```{r, echo=FALSE, fig.cap="Fig 1:The R Console", out.width='90%'}
-knitr::include_graphics("C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/RConsole.png")
-```
+![R Console](RConsole.png)
+
 
 The R console is a tool that allows you to type commands into R and see how the R system responds. The commands that you type into the console are called expressions. By default, R will display a greater-than sign (“>”) in the console (at the beginning of a line, when nothing else is shown) when R is waiting for you to enter a command into the console. R is prompting you to type something, so this is called a prompt. For example, suppose that you typed 17 + 3 on the console, you would see something similar to this:
 
-```{r, echo=FALSE, fig.cap="Fig 2:Simple operations in R Console", out.width='90%'}
-knitr::include_graphics("C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/RConsoleExample.PNG")
-```
+![R Console Example](RConsoleExample.PNG)
+
+
 
 # R Studio
 
@@ -71,31 +70,22 @@ knitr::include_graphics("C:/Users/Pravesh/Documents/blogdown/econ0791/content/EC
 - The RStudio program can be run on the desktop or through a web browser. 
 - The desktop version is available for Windows, Mac OS X, and Linux platforms 
 
-```{r, echo=FALSE, out.width='30%'}
-knitr::include_graphics("C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/RStudioLogo.png")
-```
+![R Studio](RStudioLogo.png)
 
-```{r, echo=FALSE, out.width='90%', fig.cap="Fig 3:RStudio"}
-knitr::include_graphics("C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/RStudio.png")
-```
+![](RStudio.png)
 
-# Lets begin!
-You can now unistall the R and RStudio already installed in your computers so that you can actually have a fresh start.
-```{r, echo=FALSE, out.width="90%"}
-knitr::include_graphics("C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/uninstall.png")
-```
 
 
 # Downloading and installing R and RStudio
+![](downloadR1.png)
+![](downloadR2.png)
+![](downloadR3.png)
+![](downloadRStudio1.png)
+![](downloadRStudio2.png)
+![](downloadRStudio3.png)
 
-```{r, echo=FALSE, out.width='90%'}
-knitr::include_graphics("C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/downloadR1.png")
-knitr::include_graphics("C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/downloadR2.png")
-knitr::include_graphics("C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/downloadR3.png")
-knitr::include_graphics("C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/downloadRStudio1.png")
-knitr::include_graphics("C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/downloadRStudio2.png")
-knitr::include_graphics("C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/downloadRStudio3.png")
-```
+
+
 
 
 # Getting help

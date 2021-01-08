@@ -82,18 +82,14 @@ Other software like STATA may cost on an average of $1000 annual license fee.</l
 </div>
 <div id="the-r-console" class="section level1">
 <h1>The R console</h1>
-<div class="figure"><span id="fig:unnamed-chunk-1"></span>
-<img src="C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/RConsole.png" alt="Fig 1:The R Console" width="90%" />
-<p class="caption">
-Figure 1: Fig 1:The R Console
-</p>
+<div class="figure">
+<img src="RConsole.png" alt="" />
+<p class="caption">R Console</p>
 </div>
 <p>The R console is a tool that allows you to type commands into R and see how the R system responds. The commands that you type into the console are called expressions. By default, R will display a greater-than sign (“&gt;”) in the console (at the beginning of a line, when nothing else is shown) when R is waiting for you to enter a command into the console. R is prompting you to type something, so this is called a prompt. For example, suppose that you typed 17 + 3 on the console, you would see something similar to this:</p>
-<div class="figure"><span id="fig:unnamed-chunk-2"></span>
-<img src="C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/RConsoleExample.PNG" alt="Fig 2:Simple operations in R Console" width="90%" />
-<p class="caption">
-Figure 2: Fig 2:Simple operations in R Console
-</p>
+<div class="figure">
+<img src="RConsoleExample.PNG" alt="" />
+<p class="caption">R Console Example</p>
 </div>
 </div>
 <div id="r-studio" class="section level1">
@@ -105,22 +101,20 @@ Figure 2: Fig 2:Simple operations in R Console
 <li>The RStudio program can be run on the desktop or through a web browser.</li>
 <li>The desktop version is available for Windows, Mac OS X, and Linux platforms</li>
 </ul>
-<p><img src="C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/RStudioLogo.png" width="30%" /></p>
-<div class="figure"><span id="fig:unnamed-chunk-4"></span>
-<img src="C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/RStudio.png" alt="Fig 3:RStudio" width="90%" />
-<p class="caption">
-Figure 3: Fig 3:RStudio
-</p>
+<div class="figure">
+<img src="RStudioLogo.png" alt="" />
+<p class="caption">R Studio</p>
 </div>
-</div>
-<div id="lets-begin" class="section level1">
-<h1>Lets begin!</h1>
-<p>You can now unistall the R and RStudio already installed in your computers so that you can actually have a fresh start.
-<img src="C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/uninstall.png" width="90%" /></p>
+<p><img src="RStudio.png" /></p>
 </div>
 <div id="downloading-and-installing-r-and-rstudio" class="section level1">
 <h1>Downloading and installing R and RStudio</h1>
-<p><img src="C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/downloadR1.png" width="90%" /><img src="C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/downloadR2.png" width="90%" /><img src="C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/downloadR3.png" width="90%" /><img src="C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/downloadRStudio1.png" width="90%" /><img src="C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/downloadRStudio2.png" width="90%" /><img src="C:/Users/Pravesh/Documents/blogdown/econ0791/content/ECON0791/3-Basics-of-R/downloadRStudio3.png" width="90%" /></p>
+<p><img src="downloadR1.png" />
+<img src="downloadR2.png" />
+<img src="downloadR3.png" />
+<img src="downloadRStudio1.png" />
+<img src="downloadRStudio2.png" />
+<img src="downloadRStudio3.png" /></p>
 </div>
 <div id="getting-help" class="section level1">
 <h1>Getting help</h1>
@@ -626,7 +620,7 @@ b</code></pre>
 <h1>Working with date and time</h1>
 <p>The <code>date()</code> function returns a character string of current date and time.</p>
 <pre class="r"><code>date()</code></pre>
-<pre><code>## [1] &quot;Fri Jan 08 07:52:51 2021&quot;</code></pre>
+<pre><code>## [1] &quot;Fri Jan 08 09:12:42 2021&quot;</code></pre>
 <pre class="r"><code>class(date())</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p>The <code>Sys.Date()</code> rerturns the current day in the current time zone.</p>
@@ -636,7 +630,7 @@ b</code></pre>
 <pre><code>## [1] &quot;Date&quot;</code></pre>
 <p><code>Sys.time()</code> returns returns the absolute date-time value.</p>
 <pre class="r"><code>Sys.time()</code></pre>
-<pre><code>## [1] &quot;2021-01-08 07:52:51 IST&quot;</code></pre>
+<pre><code>## [1] &quot;2021-01-08 09:12:42 IST&quot;</code></pre>
 <div id="formatting-dates" class="section level3">
 <h3>Formatting dates</h3>
 <p>The follwoing codes are required while formating dates.</p>
@@ -701,9 +695,9 @@ d1; class(d1)</code></pre>
 <pre><code>## [1] &quot;Date&quot;</code></pre>
 <pre class="r"><code>d2 &lt;- Sys.time()
 d2</code></pre>
-<pre><code>## [1] &quot;2021-01-08 07:52:51 IST&quot;</code></pre>
+<pre><code>## [1] &quot;2021-01-08 09:12:42 IST&quot;</code></pre>
 <pre class="r"><code>format(d2, &quot;%d-%B-%Y %H:%M:%S %Y&quot;)</code></pre>
-<pre><code>## [1] &quot;08-January-2021 07:52:51 2021&quot;</code></pre>
+<pre><code>## [1] &quot;08-January-2021 09:12:42 2021&quot;</code></pre>
 <p>There are basically two major data types related to time</p>
 <ol style="list-style-type: decimal">
 <li><strong>POSIXct:</strong> <strong>(Portable Operating System Interface)</strong> <em>ct</em> stands for calander time. It is the number of seconds since 1-Jan-1970. Negative numbers represent the number of seconds before this time.</li>
@@ -711,17 +705,17 @@ d2</code></pre>
 </ol>
 <pre class="r"><code># current time as POSIXct
 unclass(Sys.time()) # What does unclass do?</code></pre>
-<pre><code>## [1] 1610072571</code></pre>
+<pre><code>## [1] 1610077363</code></pre>
 <pre class="r"><code># as POSIXlt
 unclass(as.POSIXlt(Sys.time()))</code></pre>
 <pre><code>## $sec
-## [1] 51.49587
+## [1] 42.64342
 ## 
 ## $min
-## [1] 52
+## [1] 12
 ## 
 ## $hour
-## [1] 7
+## [1] 9
 ## 
 ## $mday
 ## [1] 8
@@ -1520,7 +1514,7 @@ class(mydata$Name)</code></pre>
 <pre class="r"><code>f &lt;- c(1.1,2,3.5,3.9,4.2)
 b &lt;- c(2,2.2,-1.3,0,0.2)
 plot(f,b)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-95-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-89-1.png" width="672" /></p>
 <p>You could also use a matrix instead. Try this one!</p>
 <pre class="r"><code>plot(cbind(f,b))</code></pre>
 </div>
@@ -1529,13 +1523,13 @@ plot(f,b)</code></pre>
 <p>The arguments that enter the <code>plot()</code> function are called graphical parameters. Some most commonly used graphical parameters are <strong>type</strong>, <strong>main</strong>, <strong>xlab</strong>, <strong>ylab</strong>, <strong>col</strong>, <strong>pch</strong>, <strong>cex</strong> (character expansion), <strong>lty</strong>, <strong>lwd</strong>, <strong>xlim</strong>, <strong>ylim</strong>.</p>
 <pre class="r"><code>plot(f,b, type = &quot;l&quot;)
 plot(f,b, type = &quot;b&quot;)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-97-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-91-1.png" width="672" /></p>
 </div>
 <div id="title-and-axis-labels" class="section level2">
 <h2>Title and axis labels</h2>
 <pre class="r"><code>plot(f,b, type = &quot;o&quot;, main = &quot;My Title&quot;, xlab = &quot;My x-axis label&quot;, ylab = &quot;My y-axis label&quot;)
 plot(f,b, type = &quot;s&quot;, main = &quot;My Title&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-98-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
 </div>
 <div id="colour" class="section level2">
 <h2>Colour</h2>
@@ -1543,7 +1537,7 @@ plot(f,b, type = &quot;s&quot;, main = &quot;My Title&quot;, xlab = &quot;&quot;
 title(xlab = &quot;My X-axis label&quot;, col.lab = &quot;green&quot;)
 title(ylab = &quot;My Y-axis label&quot;, col.lab = &quot;blue&quot;)
 plot(f,b, type = &quot;s&quot;, main = &quot;My Title&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, col = &quot;gold&quot;, col.main = &quot;red&quot;)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-99-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-93-1.png" width="672" /></p>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <object width="100%" height="500" data="https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf">
@@ -1561,7 +1555,7 @@ If the above pdf is not displayed in your mobile, click <a href="https://www.nce
 title(xlab = &quot;My X-axis label&quot;, col.lab = &quot;green&quot;)
 title(ylab = &quot;My Y-axis label&quot;, col.lab = &quot;blue&quot;)
 plot(f,b, type = &quot;s&quot;, main = &quot;My Title&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, col = &quot;gold&quot;, col.main = &quot;red&quot;, ylim = c(0, 2))</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-100-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
 <pre class="r"><code>plot(f,b, type = &quot;o&quot;, main = &quot;My Title&quot;, col = &quot;firebrick4&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, pch = 4)
 title(xlab = &quot;My X-axis label&quot;, col.lab = &quot;green&quot;)
 title(ylab = &quot;My Y-axis label&quot;, col.lab = &quot;blue&quot;)
@@ -1570,7 +1564,7 @@ plot(f,b, type = &quot;o&quot;, main = &quot;My Title&quot;, col = &quot;firebri
 title(xlab = &quot;My X-axis label&quot;, col.lab = &quot;green&quot;)
 title(ylab = &quot;My Y-axis label&quot;, col.lab = &quot;blue&quot;)
 plot(f,b, type = &quot;b&quot;, main = &quot;My Title&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, col = &quot;blue&quot;, col.main = &quot;red&quot;, pch = 10, lwd = 6)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-101-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-95-1.png" width="672" /></p>
 </div>
 <div id="adding-points-lines-and-text" class="section level2">
 <h2>Adding Points, Lines, and Text</h2>
@@ -1602,22 +1596,22 @@ plot(f,b, type = &quot;b&quot;, main = &quot;My Title&quot;, xlab = &quot;&quot;
 <pre><code>##  [1]  -1.49   3.37   2.59  -2.78  -3.94  -0.92   6.43   8.51   3.41  -8.23
 ## [11] -12.01  -6.58   2.87  14.12   9.63  -4.58 -14.78 -11.67   1.17  15.62</code></pre>
 <p>So now that we have the dataset ready we can start plotting. We shall recreate the plot given below stepwise.
-<img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-103-1.png" width="672" /></p>
+<img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-97-1.png" width="672" /></p>
 <ol style="list-style-type: decimal">
 <li>Lets create an empty plotting region where lines and points can be added.</li>
 </ol>
 <pre class="r"><code>plot(x, y, type = &quot;n&quot;, main = &quot;&quot;)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-104-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-98-1.png" width="672" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>The <code>abline</code> function is a simple way to add straight lines spanning a plot.</li>
 </ol>
 <pre class="r"><code>abline(h = c(-5, 5), col = &quot;red&quot;, lty = 2, lwd = 2) # h adds a horizontal line at the values of y (-5 and 5), to add verticle lines you could have used v = (5,15)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-100-1.png" width="672" /></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Now we can add shorter line segments (and not lines spannig the entire plot) between the horizontal lines drawn in step 2.</li>
 </ol>
 <pre class="r"><code>segments(x0=c(5,15),y0=c(-5,-5),x1=c(5,15),y1=c(5,5),col=&quot;red&quot;,lty=3, lwd=2)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-102-1.png" width="672" /></p>
 <ol start="4" style="list-style-type: decimal">
 <li>Now we can start adding points to the plot using <code>points()</code>.
 <ol style="list-style-type: lower-roman">
@@ -1627,37 +1621,37 @@ plot(f,b, type = &quot;b&quot;, main = &quot;My Title&quot;, xlab = &quot;&quot;
 </ol>
 <pre class="r"><code>points(x[y&gt;=5],y[y&gt;=5],pch=4,col=&quot;darkmagenta&quot;,cex=2)</code></pre></li>
 </ol>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-110-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-104-1.png" width="672" /></p>
 <ol start="5" style="list-style-type: decimal">
 <li>Now let’s extracts the coordinates where y values are less than or equal to −5. A + point character is used, and you set the color to dark green.</li>
 </ol>
 <pre class="r"><code>points(x[y&lt;=-5],y[y&lt;=-5],pch=3,col=&quot;darkgreen&quot;,cex=2)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-112-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
 <ol start="6" style="list-style-type: decimal">
 <li>The sixth step adds the blue “sweet spot” points, which are identified with <code>(x&gt;=5&amp;x&lt;=15)&amp;(y&gt;-5&amp;y&lt;5)</code>.</li>
 </ol>
 <pre class="r"><code>points(x[(x&gt;=5&amp;x&lt;=15)&amp;(y&gt;-5&amp;y&lt;5)],y[(x&gt;=5&amp;x&lt;=15)&amp;(y&gt;-5&amp;y&lt;5)],pch=19, col=&quot;blue&quot;)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-114-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
 <ol start="7" style="list-style-type: decimal">
 <li>This next command identifies the remaining points in the data set (with an x value that is either less than 5 OR greater than 15 AND a y value between −5 and 5). No graphical parameters are specified, so these points are plotted with the default black ◦.</li>
 </ol>
 <pre class="r"><code>points(x[(x&lt;5|x&gt;15)&amp;(y&gt;-5&amp;y&lt;5)],y[(x&lt;5|x&gt;15)&amp;(y&gt;-5&amp;y&lt;5)])</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-116-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-110-1.png" width="672" /></p>
 <ol start="8" style="list-style-type: decimal">
 <li>To draw lines connecting the coordinates in x and y, you use lines. Here you’ve also set lty to 4, which draws a dash-dot-dash style line.</li>
 </ol>
 <pre class="r"><code>lines(x,y,lty=4)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-118-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-112-1.png" width="672" /></p>
 <ol start="9" style="list-style-type: decimal">
 <li>The ninth line of code adds the arrow pointing to the sweet spot.</li>
 </ol>
 <pre class="r"><code>arrows(x0=8,y0=14,x1=11,y1=2.5)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-114-1.png" width="672" /></p>
 <ol start="10" style="list-style-type: decimal">
 <li>Now we shall add a text.</li>
 </ol>
 <pre class="r"><code>text(x=8,y=15,labels=&quot;sweet spot&quot;)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-116-1.png" width="672" /></p>
 <ol start="11" style="list-style-type: decimal">
 <li>Finally, we can add alegend to the plot.</li>
 </ol>
@@ -1667,7 +1661,7 @@ plot(f,b, type = &quot;b&quot;, main = &quot;My Title&quot;, xlab = &quot;&quot;
     pch=c(NA,19,1,4,3,NA,NA),lty=c(4,NA,NA,NA,NA,2,3),
     col=c(&quot;black&quot;,&quot;blue&quot;,&quot;black&quot;,&quot;darkmagenta&quot;,&quot;darkgreen&quot;,&quot;red&quot;,&quot;red&quot;),
     lwd=c(1,NA,NA,NA,NA,2,2),pt.cex=c(NA,1,1,2,2,NA,NA),ncol = 2, cex = 0.7)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-118-1.png" width="672" /></p>
 </div>
 <div id="barplots" class="section level2">
 <h2>Barplots</h2>
@@ -1680,7 +1674,7 @@ plot(f,b, type = &quot;b&quot;, main = &quot;My Title&quot;, xlab = &quot;&quot;
 ## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
 ## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2</code></pre>
 <pre class="r"><code>barplot(table(mtcars$cyl))</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-125-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-119-1.png" width="672" /></p>
 <p>To make tings interesting, we can use another variable (factor) like <code>am</code> which describes the transmission as 0 = automatic and 1 = manual.
 So how many 4, 6, and 8 cylinder cars are manual or automatic?</p>
 <pre class="r"><code>par(mfrow = c(2,2))
@@ -1693,7 +1687,7 @@ barplot(cyl_matrix, legend.text = c(&quot;automatic&quot;, &quot;manual&quot;), 
 barplot(cyl_matrix, beside = TRUE, legend.text = c(&quot;automatic&quot;, &quot;manual&quot;), args.legend = list(x = &quot;top&quot;, cex = 0.75), las = 1, main = &quot;(C)&quot;) # las=1 forces the lables on the vertical axis to appear horizontally rather than parallel to it.
 
 barplot(cyl_matrix, col = c(&quot;red&quot;, &quot;blue&quot;), beside = TRUE, horiz = TRUE,legend.text = c(&quot;automatic&quot;, &quot;manual&quot;), args.legend = list(x = &quot;bottomright&quot;, cex = 0.65), names.arg = c(&quot;4-Cyl&quot;, &quot;6-Cyl&quot;, &quot;8-Cyl&quot;), las = 1, main=&quot;(D)&quot;)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
 <blockquote>
 <p><strong>Note:</strong> <br>
 You could have drawn a legend separately as done in case of <code>plot()</code> via <code>legend()</code>, but this way automates the color assignment to ensure the reference keys match the precise shading of the bars themselves.</p>
@@ -1702,7 +1696,7 @@ You could have drawn a legend separately as done in case of <code>plot()</code> 
 <div id="pie-chart" class="section level2">
 <h2>Pie Chart</h2>
 <pre class="r"><code>pie(table(mtcars$cyl),labels=c(&quot;V4&quot;,&quot;V6&quot;,&quot;V8&quot;),col=c(&quot;white&quot;,&quot;gray&quot;,&quot;black&quot;),main=&quot;Performance cars\nby cylinders&quot;)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p>
 <blockquote>
 <p><strong>Note</strong>
 Pie charts are a very bad way of displaying information. The eye is good at judging linear measures and bad at judging relative areas. A bar chart or dot chart is a preferable way of displaying this type of data.
@@ -1715,7 +1709,7 @@ pie(rep(1, n), labels = &quot;&quot;, col = rainbow(n), border = NA)
 
 pie(c(Sky = 85, &quot;Sunny side of\npyramid&quot; = 17, &quot;Shady side of\npyramid&quot; = 5),
     init.angle = 315, col = c(&quot;deepskyblue&quot;, &quot;yellow&quot;, &quot;yellow3&quot;), border = FALSE)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p>
 </div>
 <div id="histograms" class="section level2">
 <h2>Histograms</h2>
@@ -1726,20 +1720,20 @@ pie(c(Sky = 85, &quot;Sunny side of\npyramid&quot; = 17, &quot;Shady side of\npy
 <pre class="r"><code>hist(mtcars$hp)
 arrows(x0 = 280, x1 = 180, y0 = 9, y1 = 7, pch = -9658)
 text(x = 285, y = 9.5, labels = &quot;Positively Skewed&quot;)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-123-1.png" width="672" /></p>
 <p>Let’s customise the histogram:</p>
 <pre class="r"><code>hist(mtcars$hp,breaks=seq(0,400,25),col=&quot;gray&quot;,main=&quot;Horsepower&quot;,xlab=&quot;HP&quot;, las = 1, ylim = c(0,9))
 abline(v=c(mean(mtcars$hp),median(mtcars$hp)),lty=c(1,2),lwd=2, col= c(&quot;red&quot;, &quot;blue&quot;))
 legend(&quot;topright&quot;,legend=c(&quot;mean HP&quot;,&quot;median HP&quot;),lty=c(1,2),lwd=3, col= c(&quot;red&quot;, &quot;blue&quot;))
 text(x = mean(mtcars$hp) +13, y = 8.5, col = &quot;red&quot;, labels = round(mean(mtcars$hp)))
 text(x = median(mtcars$hp) -13, y = 8.5, col = &quot;blue&quot;, labels = round(median(mtcars$hp)))</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-130-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p>
 </div>
 <div id="box-and-whisker-plot" class="section level2">
 <h2>Box-and-Whisker plot</h2>
 <p>Lets use the <code>mag</code> column in the <code>quakes</code> data set. Use <code>?quakes</code> to read about the data set.</p>
 <pre class="r"><code>boxplot(quakes$mag)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-131-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-125-1.png" width="672" /></p>
 <ul>
 <li>We can also create side-by-side box plots.</li>
 <li>Consider the <code>quakes</code> data set.</li>
@@ -1764,7 +1758,7 @@ head(depth_cut)</code></pre>
 <li>Now we are interested to know <strong>how the magnitue is correlated to the depth of an earthquake</strong>.</li>
 </ul>
 <pre class="r"><code>boxplot(quakes$mag ~ depth_cut, xlab = &quot;Depth (in km)&quot;, ylab = &quot;Magnitude&quot;, col = &quot;grey&quot;)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-133-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
 <ul>
 <li>We can see the <strong>the more the depth of an earthquake, the greater is the magnitude</strong>.</li>
 </ul>
@@ -1809,7 +1803,7 @@ points(iris[iris$Species==&quot;setosa&quot;,4],iris[iris$Species==&quot;setosa&
 points(iris[iris$Species==&quot;virginica&quot;,4],iris[iris$Species==&quot;virginica&quot;,3],pch=19,col=&quot;blue&quot;)
 points(iris[iris$Species==&quot;versicolor&quot;,4],iris[iris$Species==&quot;versicolor&quot;,3],pch=19,col=&quot;red&quot;)
 legend(&quot;topleft&quot;,legend=c(&quot;setosa&quot;,&quot;virginica&quot;,&quot;versicolor&quot;), col=c(&quot;green&quot;,&quot;blue&quot;,&quot;red&quot;),pch=c(19,19,19), cex = 0.8)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-135-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
 <ul>
 <li>You can generate the same image more simply by first setting up vectors that specify the desired point character and color for each individual observation.</li>
 </ul>
@@ -1832,19 +1826,19 @@ iris_col[iris$Species == &quot;virginica&quot;] &lt;- &quot;blue&quot;
 # Now, `iris_pch` and `iris_col` now can be used as the defined pch and col
 # Lets plot:
 plot(iris[,4], iris[,3], pch = iris_pch, col = iris_col, xlab=&quot;Petal Width (cm)&quot;, ylab=&quot;Petal Length (cm)&quot;, las = 1)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-136-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-130-1.png" width="672" /></p>
 <ul>
 <li>This <strong>vectorised operation</strong> as done above has made it easier to create a <strong>matrix of plots</strong>:</li>
 </ul>
 <pre class="r"><code># This is the default plot without any custoimisation.
 plot(iris, main = &quot;Default Plot\nNo Customisation&quot;)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-137-1.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-131-1.png" width="672" /></p>
 <pre class="r"><code># This is the plot that you create with the customised pch and col
 plot(iris, pch = iris_pch, col = iris_col, main = &quot;Customised Plot&quot;)</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-137-2.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-131-2.png" width="672" /></p>
 <pre class="r"><code># You can also do this for a select number of variables
 plot(iris[,2:4],pch = iris_pch, col = iris_col, main = &quot;Customised Plot\nFor Three Variables Only&quot; )</code></pre>
-<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-137-3.png" width="672" /></p>
+<p><img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-131-3.png" width="672" /></p>
 </div>
 </div>
 <div id="more-on-data-frames" class="section level1">
@@ -2151,16 +2145,16 @@ ECON0791
 ECON01
 </td>
 <td style="text-align:right;">
-41
-</td>
-<td style="text-align:right;">
-45
-</td>
-<td style="text-align:right;">
-30
-</td>
-<td style="text-align:right;">
 35
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+49
+</td>
+<td style="text-align:right;">
+31
 </td>
 </tr>
 <tr>
@@ -2168,16 +2162,16 @@ ECON01
 ECON02
 </td>
 <td style="text-align:right;">
-50
+22
 </td>
 <td style="text-align:right;">
-46
+35
 </td>
 <td style="text-align:right;">
-37
+48
 </td>
 <td style="text-align:right;">
-21
+45
 </td>
 </tr>
 <tr>
@@ -2185,16 +2179,16 @@ ECON02
 ECON03
 </td>
 <td style="text-align:right;">
-50
+37
 </td>
 <td style="text-align:right;">
-21
+36
 </td>
 <td style="text-align:right;">
-30
+26
 </td>
 <td style="text-align:right;">
-20
+33
 </td>
 </tr>
 <tr>
@@ -2202,16 +2196,16 @@ ECON03
 ECON04
 </td>
 <td style="text-align:right;">
-22
+31
 </td>
 <td style="text-align:right;">
 36
 </td>
 <td style="text-align:right;">
-28
+27
 </td>
 <td style="text-align:right;">
-50
+40
 </td>
 </tr>
 <tr>
@@ -2219,16 +2213,16 @@ ECON04
 ECON05
 </td>
 <td style="text-align:right;">
-40
+48
 </td>
 <td style="text-align:right;">
-37
+33
 </td>
 <td style="text-align:right;">
-35
+22
 </td>
 <td style="text-align:right;">
-37
+29
 </td>
 </tr>
 <tr>
@@ -2236,16 +2230,16 @@ ECON05
 ECON06
 </td>
 <td style="text-align:right;">
-30
+21
 </td>
 <td style="text-align:right;">
-49
+25
 </td>
 <td style="text-align:right;">
-33
+36
 </td>
 <td style="text-align:right;">
-39
+50
 </td>
 </tr>
 <tr>
@@ -2256,13 +2250,13 @@ ECON07
 47
 </td>
 <td style="text-align:right;">
-29
+25
 </td>
 <td style="text-align:right;">
-38
+42
 </td>
 <td style="text-align:right;">
-31
+26
 </td>
 </tr>
 <tr>
@@ -2270,16 +2264,16 @@ ECON07
 ECON08
 </td>
 <td style="text-align:right;">
-42
+39
 </td>
 <td style="text-align:right;">
-35
+24
 </td>
 <td style="text-align:right;">
-48
+41
 </td>
 <td style="text-align:right;">
-49
+28
 </td>
 </tr>
 <tr>
@@ -2287,16 +2281,16 @@ ECON08
 ECON09
 </td>
 <td style="text-align:right;">
-24
+44
 </td>
 <td style="text-align:right;">
-47
+39
 </td>
 <td style="text-align:right;">
-33
+28
 </td>
 <td style="text-align:right;">
-37
+29
 </td>
 </tr>
 <tr>
@@ -2304,16 +2298,16 @@ ECON09
 ECON10
 </td>
 <td style="text-align:right;">
-30
+24
 </td>
 <td style="text-align:right;">
-44
+39
 </td>
 <td style="text-align:right;">
 26
 </td>
 <td style="text-align:right;">
-32
+44
 </td>
 </tr>
 <tr>
@@ -2321,16 +2315,16 @@ ECON10
 ECON11
 </td>
 <td style="text-align:right;">
-38
+37
 </td>
 <td style="text-align:right;">
-21
+29
 </td>
 <td style="text-align:right;">
-28
+31
 </td>
 <td style="text-align:right;">
-24
+43
 </td>
 </tr>
 <tr>
@@ -2338,16 +2332,16 @@ ECON11
 ECON12
 </td>
 <td style="text-align:right;">
-28
+41
 </td>
 <td style="text-align:right;">
-36
+46
 </td>
 <td style="text-align:right;">
-27
+39
 </td>
 <td style="text-align:right;">
-32
+34
 </td>
 </tr>
 <tr>
@@ -2355,16 +2349,16 @@ ECON12
 ECON13
 </td>
 <td style="text-align:right;">
-48
-</td>
-<td style="text-align:right;">
-31
+34
 </td>
 <td style="text-align:right;">
 46
 </td>
 <td style="text-align:right;">
-25
+29
+</td>
+<td style="text-align:right;">
+31
 </td>
 </tr>
 <tr>
@@ -2372,16 +2366,16 @@ ECON13
 ECON14
 </td>
 <td style="text-align:right;">
-45
+23
 </td>
 <td style="text-align:right;">
-38
+42
 </td>
 <td style="text-align:right;">
-46
+40
 </td>
 <td style="text-align:right;">
-22
+28
 </td>
 </tr>
 <tr>
@@ -2389,16 +2383,16 @@ ECON14
 ECON15
 </td>
 <td style="text-align:right;">
-41
-</td>
-<td style="text-align:right;">
 46
 </td>
 <td style="text-align:right;">
-25
+34
 </td>
 <td style="text-align:right;">
-35
+36
+</td>
+<td style="text-align:right;">
+44
 </td>
 </tr>
 <tr>
@@ -2406,16 +2400,16 @@ ECON15
 ECON16
 </td>
 <td style="text-align:right;">
-20
+32
 </td>
 <td style="text-align:right;">
-23
+42
 </td>
 <td style="text-align:right;">
-48
+38
 </td>
 <td style="text-align:right;">
-34
+40
 </td>
 </tr>
 <tr>
@@ -2423,16 +2417,16 @@ ECON16
 ECON17
 </td>
 <td style="text-align:right;">
-36
+41
 </td>
 <td style="text-align:right;">
-37
+30
 </td>
 <td style="text-align:right;">
-22
+31
 </td>
 <td style="text-align:right;">
-23
+35
 </td>
 </tr>
 <tr>
@@ -2440,16 +2434,16 @@ ECON17
 ECON18
 </td>
 <td style="text-align:right;">
-34
-</td>
-<td style="text-align:right;">
-42
-</td>
-<td style="text-align:right;">
-31
-</td>
-<td style="text-align:right;">
 28
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+36
+</td>
+<td style="text-align:right;">
+25
 </td>
 </tr>
 <tr>
@@ -2457,16 +2451,16 @@ ECON18
 ECON19
 </td>
 <td style="text-align:right;">
-22
+30
 </td>
 <td style="text-align:right;">
-46
+37
 </td>
 <td style="text-align:right;">
-49
+36
 </td>
 <td style="text-align:right;">
-41
+34
 </td>
 </tr>
 <tr>
@@ -2474,16 +2468,16 @@ ECON19
 ECON20
 </td>
 <td style="text-align:right;">
-34
+33
 </td>
 <td style="text-align:right;">
-34
+43
 </td>
 <td style="text-align:right;">
-48
+22
 </td>
 <td style="text-align:right;">
-20
+40
 </td>
 </tr>
 <tr>
@@ -2491,16 +2485,16 @@ ECON20
 ECON21
 </td>
 <td style="text-align:right;">
-44
+42
 </td>
 <td style="text-align:right;">
-33
+49
 </td>
 <td style="text-align:right;">
-26
+25
 </td>
 <td style="text-align:right;">
-27
+42
 </td>
 </tr>
 <tr>
@@ -2508,16 +2502,16 @@ ECON21
 ECON22
 </td>
 <td style="text-align:right;">
-45
-</td>
-<td style="text-align:right;">
-26
-</td>
-<td style="text-align:right;">
-46
-</td>
-<td style="text-align:right;">
 28
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+29
 </td>
 </tr>
 <tr>
@@ -2525,16 +2519,16 @@ ECON22
 ECON23
 </td>
 <td style="text-align:right;">
-29
+49
 </td>
 <td style="text-align:right;">
-36
+33
 </td>
 <td style="text-align:right;">
-26
+39
 </td>
 <td style="text-align:right;">
-21
+46
 </td>
 </tr>
 <tr>
@@ -2542,16 +2536,16 @@ ECON23
 ECON24
 </td>
 <td style="text-align:right;">
-20
+43
 </td>
 <td style="text-align:right;">
-22
+29
 </td>
 <td style="text-align:right;">
-30
+43
 </td>
 <td style="text-align:right;">
-48
+50
 </td>
 </tr>
 <tr>
@@ -2559,16 +2553,16 @@ ECON24
 ECON25
 </td>
 <td style="text-align:right;">
-28
+34
 </td>
 <td style="text-align:right;">
-27
+50
 </td>
 <td style="text-align:right;">
-20
+23
 </td>
 <td style="text-align:right;">
-33
+24
 </td>
 </tr>
 <tr>
@@ -2576,16 +2570,16 @@ ECON25
 ECON26
 </td>
 <td style="text-align:right;">
-50
+44
 </td>
 <td style="text-align:right;">
-32
+28
 </td>
 <td style="text-align:right;">
-42
+21
 </td>
 <td style="text-align:right;">
-49
+28
 </td>
 </tr>
 <tr>
@@ -2593,16 +2587,16 @@ ECON26
 ECON27
 </td>
 <td style="text-align:right;">
-27
+38
 </td>
 <td style="text-align:right;">
-49
+28
 </td>
 <td style="text-align:right;">
-32
+36
 </td>
 <td style="text-align:right;">
-33
+36
 </td>
 </tr>
 <tr>
@@ -2610,16 +2604,16 @@ ECON27
 ECON28
 </td>
 <td style="text-align:right;">
-33
+36
 </td>
 <td style="text-align:right;">
 44
 </td>
 <td style="text-align:right;">
-22
+37
 </td>
 <td style="text-align:right;">
-34
+41
 </td>
 </tr>
 <tr>
@@ -2627,16 +2621,16 @@ ECON28
 ECON29
 </td>
 <td style="text-align:right;">
-37
+39
 </td>
 <td style="text-align:right;">
-40
+32
 </td>
 <td style="text-align:right;">
-41
+29
 </td>
 <td style="text-align:right;">
-48
+22
 </td>
 </tr>
 <tr>
@@ -2647,13 +2641,13 @@ ECON30
 31
 </td>
 <td style="text-align:right;">
-46
+36
 </td>
 <td style="text-align:right;">
-33
+27
 </td>
 <td style="text-align:right;">
-48
+42
 </td>
 </tr>
 <tr>
@@ -2661,16 +2655,16 @@ ECON30
 ECON31
 </td>
 <td style="text-align:right;">
-49
-</td>
-<td style="text-align:right;">
-32
+27
 </td>
 <td style="text-align:right;">
 34
 </td>
 <td style="text-align:right;">
-32
+27
+</td>
+<td style="text-align:right;">
+37
 </td>
 </tr>
 <tr>
@@ -2681,13 +2675,13 @@ ECON32
 38
 </td>
 <td style="text-align:right;">
-24
+30
 </td>
 <td style="text-align:right;">
-44
+50
 </td>
 <td style="text-align:right;">
-21
+37
 </td>
 </tr>
 <tr>
@@ -2695,16 +2689,16 @@ ECON32
 ECON33
 </td>
 <td style="text-align:right;">
-45
+23
+</td>
+<td style="text-align:right;">
+50
 </td>
 <td style="text-align:right;">
 46
 </td>
 <td style="text-align:right;">
-44
-</td>
-<td style="text-align:right;">
-25
+45
 </td>
 </tr>
 <tr>
@@ -2715,13 +2709,13 @@ ECON34
 35
 </td>
 <td style="text-align:right;">
-31
+49
 </td>
 <td style="text-align:right;">
-38
+39
 </td>
 <td style="text-align:right;">
-27
+36
 </td>
 </tr>
 <tr>
@@ -2729,16 +2723,16 @@ ECON34
 ECON35
 </td>
 <td style="text-align:right;">
-32
+24
 </td>
 <td style="text-align:right;">
-33
+30
 </td>
 <td style="text-align:right;">
-40
+41
 </td>
 <td style="text-align:right;">
-46
+42
 </td>
 </tr>
 <tr>
@@ -2746,61 +2740,7 @@ ECON35
 ECON36
 </td>
 <td style="text-align:right;">
-35
-</td>
-<td style="text-align:right;">
-26
-</td>
-<td style="text-align:right;">
-35
-</td>
-<td style="text-align:right;">
-44
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON37
-</td>
-<td style="text-align:right;">
-37
-</td>
-<td style="text-align:right;">
-27
-</td>
-<td style="text-align:right;">
-39
-</td>
-<td style="text-align:right;">
-40
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON38
-</td>
-<td style="text-align:right;">
-22
-</td>
-<td style="text-align:right;">
-34
-</td>
-<td style="text-align:right;">
-35
-</td>
-<td style="text-align:right;">
-28
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECON39
-</td>
-<td style="text-align:right;">
-20
-</td>
-<td style="text-align:right;">
-23
+41
 </td>
 <td style="text-align:right;">
 27
@@ -2808,22 +2748,76 @@ ECON39
 <td style="text-align:right;">
 21
 </td>
+<td style="text-align:right;">
+37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON37
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+36
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON38
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+39
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECON39
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+49
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 ECON40
 </td>
 <td style="text-align:right;">
-35
+22
 </td>
 <td style="text-align:right;">
-50
+47
 </td>
 <td style="text-align:right;">
-48
+29
 </td>
 <td style="text-align:right;">
-34
+38
 </td>
 </tr>
 </tbody>
@@ -3127,9 +3121,9 @@ Then do the following:</p>
 <li>You can plot the growth rates since the period 1929.</li>
 </ol></li>
 <li><p>As closely as you can, recreate the following plot:
-<img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-172-1.png" width="672" /></p></li>
+<img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-166-1.png" width="672" /></p></li>
 <li><p>Use the <code>quakes</code> data set and the <code>mag</code> column to create the following boxplot: Use <code>?quakes</code> to read the description of the data set. You can use the <code>shape</code> package if you want to.
-<img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-173-1.png" width="672" /></p></li>
+<img src="/ECON0791/3-Basics-of-R_files/figure-html/unnamed-chunk-167-1.png" width="672" /></p></li>
 <li><p>Us the built-in <code>InsectSprays</code> data frame, containing counts of insects on various agricultural units treated with one of six sprays:</p>
 <ol style="list-style-type: lower-roman">
 <li>Produce a histogram of the counts of insects using base R graphics.</li>
